@@ -7,6 +7,7 @@ import { CtaBanner } from "@/components/CtaBanner";
 import { GuideCard } from "@/components/GuideCard";
 import { ImagePlaceholder } from "@/components/ImagePlaceholder";
 import { getGuide, getGuideCanonicalSlug, guideDisclaimer, guideSlugAliases, guides } from "@/lib/guides";
+import { getSiteUrl } from "@/lib/site";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -103,7 +104,7 @@ export default async function GuideDetailPage({ params }: PageProps) {
     headline: guide.title,
     description: guide.description,
     image: guide.imageSrc,
-    mainEntityOfPage: `https://hyperdogtherapy.co.uk/guides/${canonicalSlug}`,
+    mainEntityOfPage: `${getSiteUrl()}/guides/${canonicalSlug}`,
     publisher: {
       "@type": "Organization",
       name: "HyperDog Therapy"

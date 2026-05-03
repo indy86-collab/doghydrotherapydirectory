@@ -3,8 +3,7 @@ import { centres } from "@/data/centres";
 import { guides } from "@/lib/guides";
 import { getValidLocalServicePages } from "@/lib/centres";
 import { getCentresByLocation, getLocations } from "@/lib/utils";
-
-const baseUrl = "https://hyperdogtherapy.co.uk";
+import { getSiteUrl } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
@@ -33,6 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     .map((location) => `/locations/${location.slug}`);
   const localServiceRoutes = getValidLocalServicePages().map((page) => `/locations/${page.locationSlug}/${page.serviceSlug}`);
 
+  const baseUrl = getSiteUrl();
   return [...staticRoutes, ...guideRoutes, ...centreRoutes, ...locationRoutes, ...localServiceRoutes].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),

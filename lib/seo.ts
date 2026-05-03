@@ -1,4 +1,5 @@
 import type { Centre } from "@/data/centres";
+import { getSiteUrl } from "@/lib/site";
 
 export type FaqItem = {
   question: string;
@@ -11,7 +12,7 @@ export function buildWebPageJsonLd({ title, description, path }: { title: string
     "@type": "WebPage",
     name: title,
     description,
-    url: `https://hyperdogtherapy.co.uk${path}`
+    url: `${getSiteUrl()}${path}`
   };
 }
 
@@ -38,7 +39,7 @@ export function buildBreadcrumbJsonLd(items: { name: string; path: string }[]) {
       "@type": "ListItem",
       position: index + 1,
       name: item.name,
-      item: `https://hyperdogtherapy.co.uk${item.path}`
+      item: `${getSiteUrl()}${item.path}`
     }))
   };
 }
@@ -47,12 +48,12 @@ export function buildCentreItemListJsonLd(centres: Centre[], path: string) {
   return {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    url: `https://hyperdogtherapy.co.uk${path}`,
+    url: `${getSiteUrl()}${path}`,
     numberOfItems: centres.length,
     itemListElement: centres.map((centre, index) => ({
       "@type": "ListItem",
       position: index + 1,
-      url: `https://hyperdogtherapy.co.uk/centres/${centre.slug}`,
+      url: `${getSiteUrl()}/centres/${centre.slug}`,
       name: centre.name
     }))
   };
