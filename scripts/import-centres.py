@@ -1,10 +1,12 @@
+import argparse
 import csv
 import json
 import re
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-CSV_PATH = Path("/Users/isingh/Downloads/listings-1777327336348 (2).csv")
+DEFAULT_CSV_PATH = Path("/Users/isingh/Downloads/listings-1777327336348 (2).csv")
 REVIEWS_PATH = ROOT / "data" / "google-reviews.json"
 OUT_PATH = ROOT / "data" / "centres.ts"
 
@@ -73,8 +75,25 @@ def load_reviews():
     return json.loads(REVIEWS_PATH.read_text(encoding="utf-8"))
 
 
+def parse_args():
+    parser = argparse.ArgumentParser(description="Import UK/Ireland centre listings into data/centres.ts")
+    parser.add_argument(
+        "--csv",
+        type=Path,
+        default=DEFAULT_CSV_PATH,
+        help="Path to listings CSV export",
+    )
+    return parser.parse_args()
+
+
 def main():
-    rows = list(csv.DictReader(CSV_PATH.open(newline="", encoding="utf-8-sig")))
+    args = parse_args()
+    csv_path = args.csv
+    if not csv_path.exists():
+        print(f"CSV not found: {csv_path}", file=sys.stderr)
+        sys.exit(1)
+
+    rows = list(csv.DictReader(csv_path.open(newline="", encoding="utf-8-sig")))
     reviews_by_place_id = load_reviews()
     excluded = []
     centres = []

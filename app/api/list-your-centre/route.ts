@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sendEmail } from "@/lib/email/resend";
 
 type Submission = {
   centreName?: string;
@@ -13,7 +14,6 @@ type Submission = {
 };
 
 const recipientEmail = process.env.LISTING_SUBMISSION_TO ?? "indyz_86@hotmail.com";
-const fromEmail = process.env.RESEND_FROM_EMAIL ?? "HyperDog Therapy <onboarding@resend.dev>";
 
 function clean(value: unknown) {
   return typeof value === "string" ? value.trim() : "";
@@ -42,11 +42,6 @@ function row(label: string, value: string) {
 }
 
 export async function POST(request: Request) {
-  const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) {
-    return NextResponse.json({ message: "Email delivery is not configured yet." }, { status: 500 });
-  }
-
   let body: Submission;
   try {
     body = await request.json();
@@ -101,23 +96,18 @@ export async function POST(request: Request) {
     </div>
   `;
 
-  const response = await fetch("https://api.resend.com/emails", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      from: fromEmail,
-      to: [recipientEmail],
-      reply_to: email,
-      subject: `New HyperDog Therapy listing: ${centreName}`,
-      html
-    })
+  const response = await sendEmail({
+    html,
+    replyTo: email,
+    subject: `New Dog Therapy Centres listing: ${centreName}`,
+    to: recipientEmail
   });
 
   if (!response.ok) {
-    return NextResponse.json({ message: "We could not send the listing enquiry. Please try again." }, { status: 502 });
+    return NextResponse.json(
+      { message: "We could not send the listing enquiry. Please try again." },
+      { status: response.status === 500 ? 500 : 502 }
+    );
   }
 
   return NextResponse.json({ ok: true });

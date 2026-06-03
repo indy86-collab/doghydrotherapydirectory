@@ -15,12 +15,15 @@ import { getFeaturedCentres, getLocations } from "@/lib/utils";
 
 const popularSearches = ["Hydrotherapy near me", "Physiotherapy", "Underwater treadmill", "Rehab centres"];
 
-const trustItems = [
-  { icon: MapPin, title: "300+ UK centres", text: "Across England, Scotland & Wales" },
+function buildTrustItems(centreCount: number) {
+  const countLabel = centreCount >= 100 ? `${centreCount}+` : `${centreCount}`;
+  return [
+  { icon: MapPin, title: `${countLabel} UK listings`, text: "Across England, Scotland, Wales & Ireland" },
   { icon: ShieldCheck, title: "Verified information", text: "Accurate, up-to-date and reviewed" },
   { icon: PawPrint, title: "Hydrotherapy, physio & rehab", text: "All services in one trusted directory" },
   { icon: BookOpen, title: "Owner-friendly guides", text: "Expert advice to help your dog feel their best" }
-];
+  ];
+}
 
 const services = [
   { title: "Dog Hydrotherapy", icon: "waves", label: "Dog hydrotherapy", imageSrc: "/images/service-dog-hydrotherapy.jpg", description: "Low-impact water therapy to aid recovery, strength & mobility." },
@@ -43,11 +46,16 @@ function getCustomerComments(limit = 3) {
       }))
     )
     .filter((review) => review.rating >= 5 && review.quote.length >= 80 && isDisplaySafeReview(review.quote))
-    .sort(() => Math.random() - 0.5)
+    .sort((a, b) => {
+      const scoreA = (a.rating ?? 5) * 1000 + a.quote.length;
+      const scoreB = (b.rating ?? 5) * 1000 + b.quote.length;
+      return scoreB - scoreA || a.centreName.localeCompare(b.centreName);
+    })
     .slice(0, limit);
 }
 
 export default function HomePage() {
+  const trustItems = buildTrustItems(centres.length);
   const featured = getFeaturedCentres();
   const locations = [...getLocations()]
     .sort((a, b) => {

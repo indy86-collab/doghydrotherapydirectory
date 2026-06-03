@@ -6,8 +6,9 @@ import { ArrowLeft, BookOpen, CheckCircle2, Clock, HelpCircle } from "lucide-rea
 import { CtaBanner } from "@/components/CtaBanner";
 import { GuideCard } from "@/components/GuideCard";
 import { ImagePlaceholder } from "@/components/ImagePlaceholder";
+import { getGuideDates } from "@/lib/guide-dates";
 import { getGuide, getGuideCanonicalSlug, guideDisclaimer, guideSlugAliases, guides } from "@/lib/guides";
-import { getSiteUrl } from "@/lib/site";
+import { getSiteUrl, SITE_BRAND_NAME } from "@/lib/site";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -82,6 +83,8 @@ export default async function GuideDetailPage({ params }: PageProps) {
   const guide = getGuide(slug);
   if (!guide) notFound();
   const canonicalSlug = getGuideCanonicalSlug(slug);
+  const { datePublished, dateModified } = getGuideDates(canonicalSlug);
+  const quickAnswer = guide.keyTakeaways[0] ?? guide.description;
   const relatedGuides = guides
     .filter((item) => item.slug !== guide.slug && item.category === guide.category)
     .concat(guides.filter((item) => item.slug !== guide.slug && item.category !== guide.category))
@@ -103,11 +106,14 @@ export default async function GuideDetailPage({ params }: PageProps) {
     "@type": "Article",
     headline: guide.title,
     description: guide.description,
-    image: guide.imageSrc,
+    image: `${getSiteUrl()}${guide.imageSrc}`,
+    datePublished,
+    dateModified,
     mainEntityOfPage: `${getSiteUrl()}/guides/${canonicalSlug}`,
     publisher: {
       "@type": "Organization",
-      name: "HyperDog Therapy"
+      name: SITE_BRAND_NAME,
+      url: getSiteUrl()
     }
   };
 
@@ -134,7 +140,7 @@ export default async function GuideDetailPage({ params }: PageProps) {
             <div className="absolute inset-x-0 bottom-0 p-5 sm:p-8">
               <div className="max-w-3xl">
                 <p className="inline-flex rounded-full bg-white/90 px-3 py-1 text-xs font-black uppercase tracking-[0.16em] text-teal backdrop-blur">
-                  {guide.category} | {guide.readTime}
+                  {guide.category} | {guide.readTime} | Updated {dateModified}
                 </p>
                 <h1 className="mt-4 text-3xl font-black tracking-tight text-white sm:text-5xl">{guide.title}</h1>
                 <p className="mt-4 max-w-2xl text-base leading-7 text-cyan-50 sm:text-lg sm:leading-8">{guide.description}</p>
@@ -183,6 +189,10 @@ export default async function GuideDetailPage({ params }: PageProps) {
             </aside>
 
             <div>
+            <section className="mt-8 rounded-2xl border border-teal/20 bg-cyan-50 p-5 ring-1 ring-sky-100 sm:p-6">
+              <h2 className="text-sm font-black uppercase tracking-[0.14em] text-teal">Quick answer</h2>
+              <p className="mt-3 text-base leading-8 text-slate-800">{quickAnswer}</p>
+            </section>
             <div className="mt-8 space-y-5 text-base leading-8 text-slate-700">
               {guide.body.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>

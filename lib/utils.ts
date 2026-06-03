@@ -1,4 +1,5 @@
 import { centres, type Centre } from "@/data/centres";
+import { getSiteUrl } from "@/lib/site";
 
 export const requestedLocations = [
   "London",
@@ -105,13 +106,16 @@ export function locationLabel(centre: Centre) {
 }
 
 export function buildLocalBusinessJsonLd(centre: Centre) {
+  const profileUrl = `${getSiteUrl()}/centres/${centre.slug}`;
   return {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id": profileUrl,
     name: centre.name,
     image: centre.image ?? undefined,
     telephone: centre.phone ?? undefined,
-    url: centre.website ?? undefined,
+    url: centre.website ?? profileUrl,
+    sameAs: centre.googleMapsUrl ? [centre.googleMapsUrl] : undefined,
     address: centre.address,
     aggregateRating: centre.rating
       ? {

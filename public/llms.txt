@@ -1,0 +1,34 @@
+# HyperDog Therapy
+
+> UK directory for dog hydrotherapy, canine physiotherapy, rehabilitation and dog swimming — https://www.dogtherapycentres.co.uk
+
+HyperDog Therapy is the brand. The public website is dogtherapycentres.co.uk.
+
+## Primary pages
+
+- Home: /
+- Find centres: /centres
+- Near me (distance sort): /near-me
+- Dog hydrotherapy near me (guide): /dog-hydrotherapy-near-me
+- Locations: /locations
+- Owner guides: /guides
+- FAQs: /faqs
+- List a centre: /list-your-centre
+- Contact: /contact
+
+## Key guides
+
+- /guides/what-is-dog-hydrotherapy
+- /guides/dog-hydrotherapy-for-arthritis
+- /guides/dog-hydrotherapy-after-surgery
+- /guides/how-much-does-dog-hydrotherapy-cost
+- /guides/how-to-choose-a-canine-hydrotherapy-centre
+- /guides/senior-dog-mobility-support
+
+## Editorial
+
+General information only — not veterinary advice. See /disclaimer and /editorial-policy.
+
+## Contact
+
+Updates and listing enquiries: /contact

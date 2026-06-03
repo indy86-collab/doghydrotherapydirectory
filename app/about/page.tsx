@@ -4,10 +4,14 @@ import { ArrowRight, BookOpen, CheckCircle2, HeartPulse, MapPin, PawPrint, Shiel
 import { centres } from "@/data/centres";
 import { CtaBanner } from "@/components/CtaBanner";
 import { getLocations, serviceOptions } from "@/lib/utils";
+import { SITE_DOMAIN_LABEL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About HyperDog Therapy",
-  description: "Learn about HyperDog Therapy, a UK directory for dog hydrotherapy, canine physiotherapy, rehabilitation centres and mobility support services."
+  description: "Learn about HyperDog Therapy, a UK directory for dog hydrotherapy, canine physiotherapy, rehabilitation centres and mobility support services.",
+  alternates: {
+    canonical: "/about"
+  }
 };
 
 const principles = [
@@ -56,8 +60,9 @@ export default function AboutPage() {
             </h1>
             <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-700">
               HyperDog Therapy is a specialist directory for dog hydrotherapy, canine physiotherapy, rehabilitation centres, dog swimming pools,
-              underwater treadmill services and mobility support. It exists to make the first stage of finding care clearer, calmer and more practical
-              for owners across the UK and Ireland.
+              underwater treadmill services and mobility support. The public site is{" "}
+              <strong className="font-black text-navy">{SITE_DOMAIN_LABEL}</strong> — one brand, one canonical domain for owners and search engines.
+              It exists to make the first stage of finding care clearer, calmer and more practical for owners across the UK and Ireland.
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
               <Link href="/centres" className="inline-flex items-center gap-2 rounded-xl bg-leaf px-5 py-3 text-sm font-black text-white shadow-card">

@@ -5,7 +5,10 @@ import { guides } from "@/lib/guides";
 
 export const metadata: Metadata = {
   title: "Dog Hydrotherapy FAQs",
-  description: "Common questions about dog hydrotherapy, canine physiotherapy, rehabilitation, costs and first appointments."
+  description: "Common questions about dog hydrotherapy, canine physiotherapy, rehabilitation, costs and first appointments.",
+  alternates: {
+    canonical: "/faqs"
+  }
 };
 
 export default function FaqsPage() {

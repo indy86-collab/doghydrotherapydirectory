@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CentresClient } from "@/components/CentresClient";
 import { getLocationImage } from "@/lib/location-images";
+import { getLocationIntroCopy } from "@/lib/local-page-copy";
 import { getCentresByLocation, getLocations, titleCase } from "@/lib/utils";
 
 type PageProps = {
@@ -40,6 +41,7 @@ export default async function LocationPage({ params }: PageProps) {
     .filter((location) => location.slug !== slug && location.count > 0)
     .sort((a, b) => b.count - a.count)
     .slice(0, 6);
+  const locationIntro = getLocationIntroCopy(slug, name);
 
   return (
     <main className="bg-mist">
@@ -59,6 +61,7 @@ export default async function LocationPage({ params }: PageProps) {
           <article className="rounded-2xl border border-sky-100 bg-white p-6 shadow-card sm:p-7">
             <h2 className="text-2xl font-black text-navy">Canine therapy services around {name}</h2>
             <div className="mt-4 space-y-4 text-base leading-8 text-slate-700">
+              <p>{locationIntro}</p>
               <p>
                 This location page helps dog owners compare public listings for hydrotherapy, physiotherapy, rehabilitation, underwater treadmill services and dog swimming around {name}. Use it as a starting point for research, then contact each centre directly to confirm services, referral requirements, appointment availability and suitability for your dog.
               </p>

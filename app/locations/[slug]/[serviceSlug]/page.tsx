@@ -9,6 +9,7 @@ import {
   getNearbyRelatedLocations,
   getValidLocalServicePages
 } from "@/lib/centres";
+import { getLocationIntroCopy } from "@/lib/local-page-copy";
 import { buildBreadcrumbJsonLd, buildCentreItemListJsonLd, buildFaqJsonLd } from "@/lib/seo";
 import { getCentresByLocation, getLocations, titleCase } from "@/lib/utils";
 
@@ -85,6 +86,7 @@ export default async function LocalServicePage({ params }: PageProps) {
 
   const nearbyLocations = getNearbyRelatedLocations(slug, serviceSlug);
   const path = `/locations/${slug}/${serviceSlug}`;
+  const locationIntro = getLocationIntroCopy(slug, locationName);
   const faqs = [
     {
       question: `How do I choose ${service.label} in ${locationName}?`,
@@ -131,6 +133,7 @@ export default async function LocalServicePage({ params }: PageProps) {
         <div className="grid gap-6 lg:grid-cols-[1fr_0.85fr]">
           <article className="rounded-2xl border border-sky-100 bg-white p-6 text-base leading-8 text-slate-700 shadow-card sm:p-8">
             <h2 className="text-2xl font-black text-navy">{service.titlePrefix} options around {locationName}</h2>
+            <p className="mt-4">{locationIntro}</p>
             <p className="mt-4">
               This page is built from real centre listing data rather than empty keyword pages. Indexable local service pages are included only where HyperDog Therapy has enough relevant listings to make the page useful. Use it to compare local providers, understand the kind of questions to ask, and decide whether a nearby centre or a specialist service slightly further away is the better fit.
             </p>

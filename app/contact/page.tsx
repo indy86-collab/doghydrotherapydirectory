@@ -3,7 +3,10 @@ import { ContactForm } from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   title: "Contact HyperDog Therapy",
-  description: "Contact HyperDog Therapy for listing updates, centre submissions, corrections and partnership enquiries."
+  description: "Contact HyperDog Therapy for listing updates, centre submissions, corrections and partnership enquiries.",
+  alternates: {
+    canonical: "/contact"
+  }
 };
 
 const contactNotes = [

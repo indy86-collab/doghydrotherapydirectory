@@ -6,7 +6,8 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CookieConsent } from "@/components/CookieConsent";
 import { Analytics } from "@vercel/analytics/next";
-import { getSiteUrl } from "@/lib/site";
+import { buildOrganizationJsonLd, buildWebSiteJsonLd, getDefaultOgImageUrl } from "@/lib/seo";
+import { getSiteUrl, SITE_BRAND_NAME } from "@/lib/site";
 
 const siteUrl = getSiteUrl();
 
@@ -31,17 +32,27 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    siteName: "HyperDog Therapy",
+    siteName: SITE_BRAND_NAME,
     title: "HyperDog Therapy | Find Dog Hydrotherapy & Canine Rehab Near You",
     description: "Find dog hydrotherapy centres, canine physiotherapists, rehabilitation clinics and dog swimming pools near you.",
-    url: siteUrl
+    url: siteUrl,
+    images: [{ url: getDefaultOgImageUrl(), width: 1200, height: 630, alt: "Dog hydrotherapy directory" }]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "HyperDog Therapy | Dog Hydrotherapy Directory UK",
+    description: "Find dog hydrotherapy centres, canine physiotherapy and rehab near you.",
+    images: [getDefaultOgImageUrl()]
   }
 };
+
+const siteJsonLd = [buildOrganizationJsonLd(), buildWebSiteJsonLd()];
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en-GB">
       <body className={inter.className}>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }} />
         <Header />
         {children}
         <Footer />

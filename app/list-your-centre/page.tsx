@@ -3,7 +3,10 @@ import { ListYourCentreForm, ListingBenefits } from "@/components/ListYourCentre
 
 export const metadata: Metadata = {
   title: "List Your Canine Therapy Centre",
-  description: "Submit your dog hydrotherapy, canine physiotherapy or rehabilitation centre to HyperDog Therapy."
+  description: "Submit your dog hydrotherapy, canine physiotherapy or rehabilitation centre to HyperDog Therapy.",
+  alternates: {
+    canonical: "/list-your-centre"
+  }
 };
 
 export default function ListYourCentrePage() {
