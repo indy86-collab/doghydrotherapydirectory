@@ -32,7 +32,7 @@ export default function PrivacyPolicyPage() {
         },
         {
           title: "Analytics, cookies and future advertising",
-          text: "The site may use cookies or similar technologies for essential functionality and privacy-conscious analytics. If advertising such as Google AdSense is added in future, cookies or advertising identifiers may be used to serve, measure and limit ads according to the relevant provider policies."
+          text: "The site uses necessary storage for essential functionality and may load privacy-conscious analytics only after analytics consent is saved. If advertising such as Google AdSense is added in future, cookies or advertising identifiers may be used to serve, measure and limit ads according to the relevant provider policies."
         },
         {
           title: "Sharing and retention",

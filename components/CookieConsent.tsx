@@ -7,6 +7,7 @@ import { Settings2, X } from "lucide-react";
 type ConsentChoice = "accepted" | "rejected" | "custom";
 
 const storageKey = "hyperdog_cookie_consent";
+const consentChangeEvent = "hyperdog-cookie-consent-change";
 
 export function CookieConsent() {
   const [visible, setVisible] = useState(false);
@@ -30,6 +31,7 @@ export function CookieConsent() {
         savedAt: new Date().toISOString()
       })
     );
+    window.dispatchEvent(new Event(consentChangeEvent));
     setVisible(false);
     setManageOpen(false);
   }

@@ -27,14 +27,19 @@ export default function GuidesPage() {
           <p className="mt-4 text-base leading-8 text-slate-700">
             These guides are written for owners who want to ask better questions before booking a centre. They explain common treatment terms, when veterinary referral matters, how pool sessions differ from underwater treadmill work, what costs can include and how to judge whether a provider is a sensible fit for your dog&apos;s needs.
           </p>
+          <p className="mt-3 text-sm font-semibold leading-6 text-slate-600">
+            We publish owner guides here — not a separate blog — so advice stays linked to the directory and stays easy to keep accurate.
+          </p>
         </div>
 
         <div className="mb-8 grid gap-3 rounded-2xl border border-sky-100 bg-white p-5 shadow-card sm:grid-cols-2 lg:grid-cols-4">
           {[
             ["What is hydrotherapy?", "/guides/what-is-dog-hydrotherapy"],
-            ["Arthritis support", "/guides/dog-hydrotherapy-for-arthritis"],
-            ["After surgery", "/guides/dog-hydrotherapy-after-surgery"],
-            ["Choosing a centre", "/guides/how-to-choose-a-canine-hydrotherapy-centre"]
+            ["Costs & insurance", "/guides/how-much-does-dog-hydrotherapy-cost"],
+            ["Nervous dogs", "/guides/nervous-dog-hydrotherapy"],
+            ["Choosing a centre", "/guides/how-to-choose-a-canine-hydrotherapy-centre"],
+            ["Insurance claims", "/guides/dog-hydrotherapy-insurance-uk"],
+            ["Senior winter care", "/guides/winter-dog-mobility-at-home"]
           ].map(([label, href]) => (
             <Link key={href} href={href} className="rounded-xl bg-cyan-50 px-4 py-3 text-sm font-black text-ocean ring-1 ring-sky-100">
               {label}

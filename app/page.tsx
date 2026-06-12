@@ -18,34 +18,40 @@ const popularSearches = ["Hydrotherapy near me", "Physiotherapy", "Underwater tr
 function buildTrustItems(centreCount: number) {
   const countLabel = centreCount >= 100 ? `${centreCount}+` : `${centreCount}`;
   return [
-  { icon: MapPin, title: `${countLabel} UK listings`, text: "Across England, Scotland, Wales & Ireland" },
-  { icon: ShieldCheck, title: "Verified information", text: "Accurate, up-to-date and reviewed" },
-  { icon: PawPrint, title: "Hydrotherapy, physio & rehab", text: "All services in one trusted directory" },
-  { icon: BookOpen, title: "Owner-friendly guides", text: "Expert advice to help your dog feel their best" }
+  { icon: MapPin, title: `${countLabel} listings`, text: "Across the UK and Ireland" },
+  { icon: ShieldCheck, title: "Public listing details", text: "Confirm details with each centre before booking" },
+  { icon: PawPrint, title: "Hydrotherapy, physio & rehab", text: "Compare services in one practical directory" },
+  { icon: BookOpen, title: "Owner-friendly guides", text: "Plain-English questions for your first call" }
   ];
 }
 
 const services = [
-  { title: "Dog Hydrotherapy", icon: "waves", label: "Dog hydrotherapy", imageSrc: "/images/service-dog-hydrotherapy.jpg", description: "Low-impact water therapy to aid recovery, strength & mobility." },
-  { title: "Canine Physiotherapy", icon: "physio", label: "Canine physiotherapy", imageSrc: "/images/service-canine-physiotherapy.jpg", description: "Hands-on treatment to relieve pain and improve movement." },
-  { title: "Rehabilitation Centres", icon: "rehab", label: "Rehab centre", imageSrc: "/images/service-rehabilitation-centre.jpg", description: "Comprehensive rehab programmes tailored to your dog&apos;s needs." },
+  { title: "Dog Hydrotherapy", icon: "waves", label: "Dog hydrotherapy", imageSrc: "/images/service-dog-hydrotherapy.jpg", description: "Low-impact water-based exercise for vet-guided support plans." },
+  { title: "Canine Physiotherapy", icon: "physio", label: "Canine physiotherapy", imageSrc: "/images/service-canine-physiotherapy.jpg", description: "Assessment-led movement support to discuss with your vet." },
+  { title: "Rehabilitation Centres", icon: "rehab", label: "Rehab centre", imageSrc: "/images/service-rehabilitation-centre.jpg", description: "Structured support options for mobility and post-surgery plans." },
   { title: "Dog Swimming Pools", icon: "pool", label: "Dog swimming pool", imageSrc: "/images/service-dog-swimming-pool.jpg", description: "Private warm water pools for exercise and fitness." },
   { title: "Underwater Treadmill", icon: "treadmill", label: "Underwater treadmill", imageSrc: "/images/service-underwater-treadmill.jpg", description: "Controlled exercise to build strength and improve conditioning." },
   { title: "Senior Dog Mobility", icon: "mobility", label: "Senior dog mobility", imageSrc: "/images/service-senior-dog-mobility.jpg", description: "Support for ageing dogs to keep them active and comfortable." }
 ] as const;
 
 function getCustomerComments(limit = 3) {
+  function snippet(text: string) {
+    const compact = text.replace(/\s+/g, " ").trim();
+    if (compact.length <= 260) return compact;
+    return `${compact.slice(0, 257).trim()}...`;
+  }
+
   return centres
     .flatMap((centre) =>
-      centre.reviews.map((review) => ({
-        quote: review.text,
+      centre.reviews.filter((review) => isDisplaySafeReview(review.text)).map((review) => ({
+        quote: snippet(review.text),
         name: review.authorName,
         centreName: centre.name,
         location: centre.city,
         rating: review.rating ?? centre.rating ?? 5
       }))
     )
-    .filter((review) => review.rating >= 5 && review.quote.length >= 80 && isDisplaySafeReview(review.quote))
+    .filter((review) => review.rating >= 5 && review.quote.length >= 80)
     .sort((a, b) => {
       const scoreA = (a.rating ?? 5) * 1000 + a.quote.length;
       const scoreB = (b.rating ?? 5) * 1000 + b.quote.length;
@@ -87,7 +93,7 @@ export default function HomePage() {
               Find Dog Hydrotherapy & Canine Rehab <span className="block text-teal">Near You</span>
             </h1>
             <p className="mt-5 max-w-xl text-lg font-semibold leading-8 text-cyan-50">
-              Your trusted directory for hydrotherapy, physiotherapy and rehabilitation centres across the UK.
+              A practical directory for hydrotherapy, physiotherapy and rehabilitation centres across the UK and Ireland.
             </p>
 
             <div className="relative mt-7 w-full max-w-5xl">
@@ -120,7 +126,7 @@ export default function HomePage() {
                   <LocateFixed size={14} />
                   Find centres near me
                 </Link>
-                <span className="mr-1 shrink-0 text-slate-500">Popular searches:</span>
+                <span className="mr-1 shrink-0 text-slate-500">Useful searches:</span>
                 {popularSearches.map((search) => (
                   <Link key={search} href={`/centres?query=${encodeURIComponent(search.replace(" near me", ""))}`} className="rounded-full bg-cyan-50 px-3 py-1.5 text-ocean ring-1 ring-cyan-100 hover:text-navy">
                     {search}

@@ -30,7 +30,6 @@ const columns = [
     title: "For centres",
     links: [
       ["List Your Centre", "/list-your-centre"],
-      ["Centre Login", "/login"],
       ["Directory Benefits", "/list-your-centre"],
       ["Help Centre", "/contact"]
     ]

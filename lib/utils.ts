@@ -20,6 +20,8 @@ export const serviceOptions = [
   "Mobility"
 ];
 
+const broadLocationSlugs = new Set(["england", "scotland", "wales", "northern-ireland", "ireland"]);
+
 export function slugify(value: string) {
   return value
     .toLowerCase()
@@ -34,6 +36,11 @@ export function titleCase(value: string) {
     .filter(Boolean)
     .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
     .join(" ");
+}
+
+export function isBroadOrCompoundLocationName(value: string) {
+  const slug = slugify(value);
+  return broadLocationSlugs.has(slug) || value.includes(";") || slug.split("-").some((part) => broadLocationSlugs.has(part));
 }
 
 export function getCentreBySlug(slug: string) {
@@ -71,6 +78,7 @@ export function getLocations() {
 
   const dynamic = Array.from(found.entries())
     .filter(([name]) => !requestedLocations.some((loc) => loc.toLowerCase() === name.toLowerCase()))
+    .filter(([name]) => !isBroadOrCompoundLocationName(name))
     .sort((a, b) => b[1] - a[1])
     .slice(0, 30)
     .map(([name, count]) => ({ name, slug: slugify(name), count }));
@@ -79,17 +87,15 @@ export function getLocations() {
 }
 
 export function getCentresByLocation(locationSlug: string) {
+  const locationTerm = locationSlug.replace(/-/g, " ");
   return centres.filter((centre) => {
-    const haystack = [
-      centre.city,
-      centre.region,
-      centre.address,
-      centre.postcode
-    ]
-      .join(" ")
-      .toLowerCase();
+    const citySlug = slugify(centre.city);
+    const regionSlugs = centre.region
+      .split(";")
+      .map((value) => slugify(value.trim()))
+      .filter((value) => value && !broadLocationSlugs.has(value));
 
-    return haystack.includes(locationSlug.replace(/-/g, " "));
+    return citySlug === locationSlug || regionSlugs.includes(locationSlug) || centre.postcode.toLowerCase().startsWith(locationTerm);
   });
 }
 

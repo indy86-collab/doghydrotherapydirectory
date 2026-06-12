@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CookieConsent } from "@/components/CookieConsent";
-import { Analytics } from "@vercel/analytics/next";
+import { ConsentManagedAnalytics } from "@/components/ConsentManagedAnalytics";
 import { buildOrganizationJsonLd, buildWebSiteJsonLd, getDefaultOgImageUrl } from "@/lib/seo";
 import { getSiteUrl, SITE_BRAND_NAME } from "@/lib/site";
 
@@ -14,10 +13,6 @@ const siteUrl = getSiteUrl();
 const inter = Inter({
   subsets: ["latin"],
   display: "swap"
-});
-
-const cloudflareBeacon = JSON.stringify({
-  token: "b236f09217f046ebaae12c9aa85a31b1"
 });
 
 export const metadata: Metadata = {
@@ -57,14 +52,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {children}
         <Footer />
         <CookieConsent />
-        <Analytics />
-        {/* Cloudflare Web Analytics */}
-        <Script
-          src="https://static.cloudflareinsights.com/beacon.min.js"
-          strategy="afterInteractive"
-          data-cf-beacon={cloudflareBeacon}
-        />
-        {/* End Cloudflare Web Analytics */}
+        <ConsentManagedAnalytics />
       </body>
     </html>
   );

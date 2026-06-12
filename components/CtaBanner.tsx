@@ -17,12 +17,12 @@ export function CtaBanner() {
             <div>
               <h2 className="text-2xl font-black tracking-tight md:text-3xl">Own a canine therapy centre? Get listed.</h2>
               <p className="mt-2 max-w-2xl text-sm leading-6 text-cyan-50">
-                Join trusted UK centres and connect with dog owners who are searching for your services.
+                Share your public service details so dog owners can compare options before contacting you.
               </p>
             </div>
           </div>
           <ul className="space-y-2 text-sm font-semibold text-cyan-50">
-            {["Increase your visibility", "Reach more local clients", "Easy listing & management"].map((item) => (
+            {["Add useful public details", "Help owners compare services", "Request corrections when details change"].map((item) => (
               <li key={item} className="flex items-center gap-2">
                 <Check size={17} /> {item}
               </li>

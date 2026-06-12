@@ -30,9 +30,11 @@ node scripts/seo-footprint.mjs
 
 ## 4. Actions this month (pick 3)
 
+Follow [CONTENT_PRIORITIES.md](./CONTENT_PRIORITIES.md) — listings before new articles.
+
 - [ ] Outreach: email _____ centres ([CENTRE_OUTREACH.md](./CENTRE_OUTREACH.md))
-- [ ] Import: add _____ new listings ([LISTINGS_EXPANSION.md](./LISTINGS_EXPANSION.md))
-- [ ] Content: publish/update _____ guide(s)
+- [ ] Import: add _____ new listings ([LISTINGS_EXPANSION.md](./LISTINGS_EXPANSION.md)); run `node scripts/audit-service-tags.mjs`
+- [ ] Content: refresh top GSC pages **or** add guide only for a query gap ([GSC_BASELINE.md](./GSC_BASELINE.md))
 - [ ] Internal links: link top GSC page to _____ related guides/centres
 - [ ] Fix: correct listing data for _____
 

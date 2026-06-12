@@ -8,7 +8,8 @@ import { CentreCard } from "@/components/CentreCard";
 import { CtaBanner } from "@/components/CtaBanner";
 import { GuideCard } from "@/components/GuideCard";
 import { ImagePlaceholder } from "@/components/ImagePlaceholder";
-import { guides } from "@/lib/guides";
+import { getCentreEditorialEnrichment } from "@/lib/centre-enrichment";
+import { getRecommendedGuidesForCentre } from "@/lib/guide-recommendations";
 import { isDisplaySafeReview } from "@/lib/review-safety";
 import { buildLocalBusinessJsonLd, formatRating, getCentreBySlug, getServiceTags, locationLabel } from "@/lib/utils";
 
@@ -133,16 +134,11 @@ export default async function CentreDetailPage({ params }: PageProps) {
     .filter((item) => item.slug !== centre.slug && (item.city === centre.city || item.region === centre.region))
     .slice(0, 4);
   const tags = getServiceTags(centre);
-  const relatedGuides = guides
-    .filter((guide) =>
-      tags.some((tag) => `${guide.title} ${guide.description} ${guide.category}`.toLowerCase().includes(tag.toLowerCase().split(" ")[0]))
-    )
-    .concat(guides)
-    .filter((guide, index, all) => all.findIndex((item) => item.slug === guide.slug) === index)
-    .slice(0, 3);
+  const relatedGuides = getRecommendedGuidesForCentre(tags, centre.category, 4);
   const serviceDescription = tags.length
     ? tags.join(", ").toLowerCase()
     : centre.category.toLowerCase();
+  const enrichment = getCentreEditorialEnrichment(centre);
 
   return (
     <main className="bg-mist">
@@ -221,6 +217,7 @@ export default async function CentreDetailPage({ params }: PageProps) {
           <article className="rounded-2xl border border-sky-100 bg-white p-6 shadow-card sm:p-7">
             <h2 className="text-2xl font-black text-navy">About this listing</h2>
             <div className="mt-4 space-y-4 text-base leading-8 text-slate-700">
+              <p>{enrichment.editorialSummary}</p>
               <p>
                 {centre.name} is listed as a {centre.category.toLowerCase()} in {locationLabel(centre)}. Based on the listing category and available public business information, this profile may be relevant for owners researching {serviceDescription} services in or around {centre.city}.
               </p>
@@ -253,23 +250,28 @@ export default async function CentreDetailPage({ params }: PageProps) {
 
         <section className="mt-10 grid gap-6 lg:grid-cols-3">
           <article className="rounded-2xl border border-sky-100 bg-white p-6 shadow-card">
-            <h2 className="text-xl font-black text-navy">Questions to ask before booking</h2>
+            <h2 className="text-xl font-black text-navy">Questions for this centre</h2>
             <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-700">
-              {["Do you require veterinary referral or consent?", "Who assesses my dog before the first session?", "Do you recommend pool work, treadmill work or physiotherapy?", "How do you monitor water hygiene and safety?", "Can you provide reports for my vet or insurer?"].map((item) => (
+              {enrichment.ownerQuestions.map((item) => (
                 <li key={item} className="flex gap-2"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-teal" />{item}</li>
               ))}
             </ul>
           </article>
           <article className="rounded-2xl border border-sky-100 bg-white p-6 shadow-card">
-            <h2 className="text-xl font-black text-navy">Before your first appointment</h2>
-            <p className="mt-4 text-sm leading-6 text-slate-700">
-              Bring your dog&apos;s diagnosis if known, medication details, vet referral notes, insurance requirements and a clear summary of recent symptoms. Tell the centre if your dog is nervous, reactive, water-shy or has handling sensitivities.
-            </p>
+            <h2 className="text-xl font-black text-navy">Confirm before travelling</h2>
+            <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-700">
+              {enrichment.whatToConfirm.map((item) => (
+                <li key={item} className="flex gap-2"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-teal" />{item}</li>
+              ))}
+            </ul>
           </article>
           <article className="rounded-2xl border border-sky-100 bg-white p-6 shadow-card">
             <h2 className="text-xl font-black text-navy">Local area</h2>
             <p className="mt-4 text-sm leading-6 text-slate-700">
               Owners searching in {centre.city} may also compare nearby providers in {centre.region}. Check travel time, parking, accessibility and whether the centre can accommodate your dog&apos;s size, mobility and confidence level.
+            </p>
+            <p className="mt-4 text-sm leading-6 text-slate-700">
+              Found an outdated phone number, website, address or service tag? Please use the contact page to request a correction with the page URL and source.
             </p>
           </article>
         </section>

@@ -33,7 +33,10 @@ Audit coverage:
 
 ```bash
 node scripts/seo-footprint.mjs
+node scripts/audit-service-tags.mjs
 ```
+
+The service-tags audit shows which **London, Manchester, Birmingham**, etc. city+service URLs still need more listings before they can index.
 
 ## Targets
 

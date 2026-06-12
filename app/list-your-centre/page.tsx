@@ -18,7 +18,7 @@ export default function ListYourCentrePage() {
             <p className="text-sm font-black uppercase tracking-[0.18em] text-teal">For centres</p>
             <h1 className="mt-3 text-4xl font-black tracking-tight text-navy sm:text-5xl">List your canine therapy centre</h1>
             <p className="mt-5 text-lg leading-8 text-slate-700">
-              Share your centre details with HyperDog Therapy and help UK dog owners find trusted hydrotherapy, physiotherapy and rehab support.
+              Share your centre details with HyperDog Therapy and help UK dog owners compare hydrotherapy, physiotherapy and rehab support before they contact providers directly.
             </p>
             <div className="mt-8">
               <ListingBenefits />

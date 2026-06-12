@@ -202,7 +202,7 @@ export const guides: Guide[] = [
   {
     slug: "how-much-does-dog-hydrotherapy-cost",
     title: "How much does dog hydrotherapy cost in the UK?",
-    description: "What affects pricing, how many sessions dogs may need, and questions to ask before committing to a course.",
+    description: "UK price ranges, what affects session fees, insurance paperwork, and questions to ask before booking a course of hydrotherapy.",
     imageLabel: "Cost guide",
     imageSrc: "/images/guide-hydrotherapy-cost.jpg",
     readTime: "6 min read",
@@ -555,8 +555,8 @@ export const guides: Guide[] = [
   },
   {
     slug: "how-to-choose-a-canine-hydrotherapy-centre",
-    title: "How to choose a dog hydrotherapy centre",
-    description: "A practical checklist for comparing canine hydrotherapy, physiotherapy and rehab centres near you.",
+    title: "How to choose a dog hydrotherapy centre in the UK",
+    description: "Compare hydrotherapy centres by referral rules, qualifications, facilities, safety, reviews and cost — before you book.",
     imageLabel: "Choosing a centre",
     imageSrc: "/images/guide-choose-hydrotherapy-centre.jpg",
     readTime: "6 min read",
@@ -751,6 +751,221 @@ export const guides: Guide[] = [
       {
         question: "Can physiotherapy hurt my dog?",
         answer: "Exercises or handling that are inappropriate can make problems worse. Work with a qualified professional and follow your vet's advice."
+      }
+    ]
+  },
+  {
+    slug: "dog-hydrotherapy-insurance-uk",
+    title: "Does pet insurance cover dog hydrotherapy in the UK?",
+    description: "How insurers usually treat hydrotherapy and physiotherapy, what paperwork centres provide, and questions to ask before claiming.",
+    imageLabel: "Insurance and hydrotherapy",
+    imageSrc: "/images/guide-hydrotherapy-cost.jpg",
+    readTime: "6 min read",
+    category: "Costs",
+    keyTakeaways: [
+      "Many policies cover hydrotherapy only when it is vet-referred and provided by an eligible professional.",
+      "Keep referral forms, invoices and progress notes from the start of treatment.",
+      "Policies differ widely — confirm cover, limits and excess before booking a course."
+    ],
+    body: [
+      "Owners often ask whether pet insurance will pay for dog hydrotherapy or canine physiotherapy. There is no single UK rule: cover depends on your policy wording, whether treatment is recommended by a vet, who delivers the sessions and whether the insurer recognises that provider.",
+      "This guide explains practical steps so you can compare centres and avoid surprises at claim time. It is general information only — always read your policy documents and speak with your insurer."
+    ],
+    sections: [
+      {
+        heading: "When insurers may contribute",
+        body: [
+          "Many policies treat hydrotherapy as complementary treatment for an insured condition, such as arthritis, cruciate injury or post-surgical rehab, when a vet has recommended it.",
+          "Insurers may ask for evidence that sessions are therapeutic rather than recreational swimming. That is one reason reputable centres use referral or consent forms."
+        ]
+      },
+      {
+        heading: "Paperwork to keep",
+        body: [
+          "From the first appointment, keep veterinary referral or consent, itemised invoices, dates of sessions and any progress summaries the centre can share with your vet.",
+          "If your insurer uses a direct-pay network, confirm the centre is acceptable before treatment starts — do not assume every hydrotherapy pool qualifies."
+        ],
+        bullets: [
+          "Vet referral or consent letter",
+          "Itemised invoices with dates",
+          "Session notes or discharge summaries",
+          "Your policy number and claim reference"
+        ]
+      },
+      {
+        heading: "Questions for your insurer and centre",
+        body: [
+          "Ask your insurer: Is hydrotherapy covered for this diagnosis? Is there a session limit or annual cap? Must the therapist hold specific qualifications?",
+          "Ask the centre: Can you provide insurance-style invoices? Will you complete insurer forms? Can reports go to our vet?"
+        ]
+      }
+    ],
+    faqs: [
+      {
+        question: "Is recreational dog swimming usually covered?",
+        answer: "Most policies focus on vet-directed treatment. Fitness or fun swims are less likely to be covered unless your policy explicitly includes them."
+      },
+      {
+        question: "What if my claim is rejected?",
+        answer: "Ask the insurer which document or wording failed. Your vet or centre may be able to clarify the treatment plan. You can still pay privately while disputing a decision through the insurer's complaints process."
+      }
+    ]
+  },
+  {
+    slug: "nervous-dog-hydrotherapy",
+    title: "Hydrotherapy for nervous or anxious dogs",
+    description: "How centres introduce fearful dogs to water, what to tell them beforehand, and when land-based rehab may be better first.",
+    imageLabel: "Nervous dog hydrotherapy",
+    imageSrc: "/images/guide-first-hydrotherapy-session.jpg",
+    readTime: "6 min read",
+    category: "Getting started",
+    keyTakeaways: [
+      "A good first session for a nervous dog may be very short and focus on confidence, not exercise.",
+      "Tell the centre about reactivity, handling sensitivity, noise fears and past bad experiences.",
+      "Some dogs need physiotherapy or confidence work on land before pool sessions."
+    ],
+    body: [
+      "Many owners worry their dog is too anxious for hydrotherapy. In practice, experienced centres often work with nervous rescues, post-operative dogs who dislike handling, and older dogs who have never swum.",
+      "Success usually depends on a slow introduction, clear communication and realistic goals — not forcing a dog into the water on day one."
+    ],
+    sections: [
+      {
+        heading: "What to tell the centre before booking",
+        body: [
+          "Describe triggers: strangers, other dogs, loud dryers, slippery floors, harnesses, tail or paw handling, and any bite history.",
+          "Ask whether sessions are one-to-one, how dogs enter the pool, whether you can stay nearby, and how they stop a session if stress rises."
+        ]
+      },
+      {
+        heading: "What a gentle first visit may look like",
+        body: [
+          "The therapist may spend most of the appointment on history, walking assessment and calm handling near the pool.",
+          "Water introduction might mean standing in shallow water, supported floating with a life jacket, or a brief treadmill walk — not a full workout."
+        ]
+      },
+      {
+        heading: "When to pause or choose another route",
+        body: [
+          "If your dog is in acute pain, has open wounds, is medically unstable, or is extremely reactive in busy environments, ask your vet whether hydrotherapy should wait.",
+          "Land-based physiotherapy, pain control and behaviour support may need to come first."
+        ]
+      }
+    ],
+    faqs: [
+      {
+        question: "Should I sedate my anxious dog for hydrotherapy?",
+        answer: "Only if your vet prescribes medication for a specific reason. Sedation decisions are veterinary — do not use human calming products without professional advice."
+      },
+      {
+        question: "Can I try hydrotherapy if my dog hates baths?",
+        answer: "Many bath-shy dogs tolerate therapeutic pools because the environment, handling and goals are different. Tell the centre about bath fear so they can plan a slower introduction."
+      }
+    ]
+  },
+  {
+    slug: "dog-weight-management-hydrotherapy",
+    title: "Dog weight management and hydrotherapy",
+    description: "How controlled water exercise can support overweight dogs when combined with vet-led diet and mobility planning.",
+    imageLabel: "Weight and hydrotherapy",
+    imageSrc: "/images/guide-need-hydrotherapy.jpg",
+    readTime: "7 min read",
+    category: "Conditions",
+    keyTakeaways: [
+      "Hydrotherapy can offer lower-impact exercise when walks are limited, but diet and vet oversight remain central.",
+      "Weight loss plans should be gradual and tailored — especially for breeds prone to joint strain.",
+      "Ask how the centre monitors fatigue, lameness and progress."
+    ],
+    body: [
+      "Carrying extra weight increases load on joints and can make arthritis, cruciate problems and breathing issues harder to manage. When vets recommend more controlled activity, hydrotherapy or structured swimming may be discussed as part of a wider weight plan.",
+      "Water exercise is not a substitute for measured feeding, pain control or diagnosis of underlying disease."
+    ],
+    sections: [
+      {
+        heading: "Why vets may suggest water exercise",
+        body: [
+          "Buoyancy can reduce load on sore joints while the dog moves in a controlled way. That may help some overweight dogs build fitness when normal walks cause lameness or overheating.",
+          "The therapist should set pace, duration and frequency based on your dog's shape, breathing, heart health and mobility — not generic weight-loss targets."
+        ]
+      },
+      {
+        heading: "Combining hydrotherapy with diet changes",
+        body: [
+          "Most successful weight plans combine appropriate food portions, treats discipline, vet weigh-ins and realistic exercise.",
+          "Ask your vet for a target rate of loss and whether hydrotherapy is safe if your dog also has heart disease, airway problems or significant arthritis."
+        ]
+      },
+      {
+        heading: "Warning signs to report",
+        body: [
+          "Stop and contact your vet if your dog becomes more lame, pants excessively, coughs, vomits, refuses food, or is unusually stiff after sessions.",
+          "Good centres reduce session length or pause treatment when a dog is struggling — progress should be reviewed regularly."
+        ]
+      }
+    ],
+    faqs: [
+      {
+        question: "How many hydrotherapy sessions will my dog need to lose weight?",
+        answer: "There is no fixed number. Weight change depends mainly on diet and overall activity. Hydrotherapy may support fitness but rarely drives loss on its own."
+      },
+      {
+        question: "Is dog swimming enough for weight loss?",
+        answer: "Recreational swimming can help some dogs, but overweight dogs with joint disease usually need a vet-approved plan rather than unstructured exercise alone."
+      }
+    ]
+  },
+  {
+    slug: "winter-dog-mobility-at-home",
+    title: "Winter mobility support for older dogs at home",
+    description: "Practical home safety, exercise and comfort tips for stiff senior dogs — alongside vet care and therapy where appropriate.",
+    imageLabel: "Winter mobility",
+    imageSrc: "/images/guide-senior-dog-mobility.jpg",
+    readTime: "6 min read",
+    category: "Conditions",
+    keyTakeaways: [
+      "Cold, ice and slippery floors often make arthritis stiffness more noticeable in winter.",
+      "Short, frequent supported walks and non-slip surfaces can reduce falls at home.",
+      "Hydrotherapy or physiotherapy may help some dogs when recommended by a vet."
+    ],
+    body: [
+      "Many owners notice their older dog is slower, stiffer or less willing to go out in winter. Cooler weather, damp conditions and reduced daylight can all change routine — but sudden lameness or loss of appetite still deserves a vet check.",
+      "Home changes and gentle activity can complement professional treatment; they do not replace diagnosis."
+    ],
+    sections: [
+      {
+        heading: "Make the home safer",
+        body: [
+          "Use rugs or runners on slippery floors, block stairs if needed, and provide a supportive bed away from draughts.",
+          "Dry paws after wet walks and check nails — long nails reduce grip on hard floors."
+        ],
+        bullets: [
+          "Non-slip routes to food, water and bed",
+          "Ramps or lifted bowls if neck or back stiffness",
+          "Warm, draft-free resting area",
+          "Good lighting for evening movement"
+        ]
+      },
+      {
+        heading: "Exercise in colder months",
+        body: [
+          "Several short walks may suit stiff dogs better than one long outing. Let your dog set the pace and watch for lagging, shaking or reluctance to continue.",
+          "If your vet agrees, indoor balance exercises or hydrotherapy may maintain muscle when outdoor activity drops."
+        ]
+      },
+      {
+        heading: "When to speak to your vet",
+        body: [
+          "Book a review if stiffness is worsening quickly, your dog yelps when moving, stops eating, or cannot stand. Winter management should adapt to pain level and diagnosis — not guesswork."
+        ]
+      }
+    ],
+    faqs: [
+      {
+        question: "Do dogs with arthritis feel worse in winter?",
+        answer: "Some owners report more stiffness in cold or damp weather. Patterns vary between dogs; track symptoms and discuss changes with your vet."
+      },
+      {
+        question: "Can hydrotherapy replace winter walks?",
+        answer: "It may supplement activity for some dogs when vet-approved, but most still need appropriate outdoor toileting walks and mental stimulation."
       }
     ]
   }

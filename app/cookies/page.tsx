@@ -11,7 +11,7 @@ export default function CookiesPage() {
     <SimplePage
       eyebrow="Legal"
       title="Cookies Policy"
-      text="HyperDog Therapy may use cookies and similar technologies to keep the website working, understand usage and improve directory features."
+      text="HyperDog Therapy uses necessary storage for core site preferences. Optional analytics scripts load only after analytics consent is saved."
       sections={[
         {
           title: "Essential cookies",
@@ -19,7 +19,7 @@ export default function CookiesPage() {
         },
         {
           title: "Analytics cookies",
-          text: "We may use privacy-conscious analytics to understand which pages are helpful, how visitors find the directory and where the site can be improved."
+          text: "With your consent, we may use privacy-conscious analytics to understand which pages are helpful, how visitors find the directory and where the site can be improved. If you reject optional cookies, analytics scripts should not load."
         },
         {
           title: "Third-party services",

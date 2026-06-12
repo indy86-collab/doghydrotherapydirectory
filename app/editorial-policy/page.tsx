@@ -25,6 +25,10 @@ export default function EditorialPolicyPage() {
           text: "Guides are written to help owners understand terminology, questions to ask and when veterinary advice matters. Content is reviewed for clarity, caution around health claims and usefulness before publication."
         },
         {
+          title: "AI-assisted listing notes",
+          text: "AI may assist with drafting short listing summaries from local and public facts already held in the directory, such as centre name, location, category, service tags and public review signals. These notes are constrained to known fields, reviewed for cautious wording and must not invent qualifications, services, prices, opening hours, clinical claims or veterinary approval."
+        },
+        {
           title: "Corrections and updates",
           text: "Centre owners and dog owners can request corrections through the contact page. Useful correction requests include the centre name, current page URL, the detail that should change and a source where possible."
         },

@@ -56,7 +56,7 @@ export default function AboutPage() {
           <div>
             <p className="text-sm font-black uppercase tracking-[0.18em] text-teal">About HyperDog Therapy</p>
             <h1 className="mt-3 max-w-4xl text-3xl font-black tracking-tight text-navy sm:text-5xl">
-              Helping dog owners find trusted hydrotherapy and rehab support.
+              Helping dog owners compare hydrotherapy and rehab support.
             </h1>
             <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-700">
               HyperDog Therapy is a specialist directory for dog hydrotherapy, canine physiotherapy, rehabilitation centres, dog swimming pools,
@@ -144,6 +144,9 @@ export default function AboutPage() {
               post-surgery rehabilitation or a new exercise programme.
             </p>
           </div>
+          <p className="mt-4 text-sm leading-6 text-slate-700">
+            If a listing appears outdated, use the contact page to send the page URL, the detail that should change and a source where possible.
+          </p>
         </div>
       </section>
 

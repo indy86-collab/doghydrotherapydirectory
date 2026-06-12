@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "lint": "next lint",
-    "seo:footprint": "node scripts/seo-footprint.mjs"
+    "seo:footprint": "node scripts/seo-footprint.mjs",
+    "seo:service-tags": "node scripts/audit-service-tags.mjs",
+    "adsense:audit": "node scripts/adsense-readiness-audit.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
