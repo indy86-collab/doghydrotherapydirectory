@@ -31,8 +31,8 @@ export default function PrivacyPolicyPage() {
           text: "Information is used to reply to enquiries, review listing corrections, understand site performance, prevent misuse and improve directory content."
         },
         {
-          title: "Analytics, cookies and future advertising",
-          text: "The site uses necessary storage for essential functionality and may load privacy-conscious analytics only after analytics consent is saved. If advertising such as Google AdSense is added in future, cookies or advertising identifiers may be used to serve, measure and limit ads according to the relevant provider policies."
+          title: "Analytics, cookies and advertising",
+          text: "The site uses necessary storage for essential functionality and may load privacy-conscious analytics only after analytics consent is saved. Google AdSense (or similar advertising) is only loaded when an AdSense client ID is configured on the server and the visitor has granted advertising consent. In that case, cookies or advertising identifiers may be used to serve, measure and limit ads according to Google's policies. ads.txt on this domain lists authorised sellers when advertising is used."
         },
         {
           title: "Sharing and retention",

@@ -102,6 +102,7 @@ Remaining risks:
 - Confirm business listing data is accurate enough for publication and remove or correct any stale phone/website/address details.
 - Add a visible cookie consent/management flow if analytics or advertising cookies are enabled before or after AdSense approval.
 - Do not add AdSense code until after the site has passed manual quality review.
+- To enable AdSense **after approval**: set `NEXT_PUBLIC_ADSENSE_CLIENT=ca-pub-XXXXXXXX` in Vercel (matches `public/ads.txt`), redeploy, then place at most one `AdSenseUnit` per page. The loader in `ConsentManagedAds` stays off when the env var is unset.
 
 ## Apply Now?
 

@@ -8,6 +8,7 @@
     "lint": "next lint",
     "seo:footprint": "node scripts/seo-footprint.mjs",
     "seo:service-tags": "node scripts/audit-service-tags.mjs",
+    "seo:websites": "node scripts/audit-centre-websites.mjs",
     "adsense:audit": "node scripts/adsense-readiness-audit.mjs"
   },
   "dependencies": {

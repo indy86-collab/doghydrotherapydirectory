@@ -23,8 +23,9 @@ const faqs = [
 ];
 
 export const metadata: Metadata = {
-  title: "Dog Hydrotherapy Near Me | HyperDog Therapy",
-  description: "Find dog hydrotherapy centres, canine physiotherapy clinics, rehabilitation services and dog swimming pools near your area.",
+  title: "Dog Hydrotherapy Near Me | Find Centres UK",
+  description:
+    "Find dog hydrotherapy near you in the UK: sort by distance, compare pool and treadmill centres, check vet referral rules, then shortlist providers before you book.",
   alternates: {
     canonical: "/dog-hydrotherapy-near-me"
   }
@@ -38,8 +39,9 @@ export default function DogHydrotherapyNearMePage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             buildWebPageJsonLd({
-              title: "Dog Hydrotherapy Near Me | Find Canine Therapy Centres",
-              description: "Find dog hydrotherapy centres, canine physiotherapy clinics, rehabilitation services and dog swimming pools near your area.",
+              title: "Dog hydrotherapy near me",
+              description:
+                "Find dog hydrotherapy near you in the UK: sort by distance, compare pool and treadmill centres, check vet referral rules, then shortlist providers before you book.",
               path: "/dog-hydrotherapy-near-me"
             }),
             buildFaqJsonLd(faqs)
@@ -49,15 +51,18 @@ export default function DogHydrotherapyNearMePage() {
       <article className="mx-auto max-w-5xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
         <p className="text-sm font-black uppercase tracking-[0.18em] text-teal">Local guide</p>
         <h1 className="mt-2 text-3xl font-black tracking-tight text-navy sm:text-5xl">
-          Dog Hydrotherapy Near Me | Find Canine Therapy Centres
+          Dog hydrotherapy near me
         </h1>
+        <p className="mt-4 max-w-3xl text-lg leading-8 text-slate-700">
+          To find dog hydrotherapy near you, shortlist UK centres within a sensible travel radius, confirm pool or underwater treadmill facilities, check veterinary referral rules, then contact providers to confirm suitability for your dog. Use the Near Me finder below for distance sorting, or browse all listed centres by town or postcode.
+        </p>
 
         <section className="mt-6 rounded-2xl border border-sky-100 bg-white p-5 shadow-card sm:p-7">
           <div className="grid gap-5 sm:grid-cols-[1fr_15rem] sm:items-center">
             <div>
-              <h2 className="text-2xl font-black text-navy">Want results based on your current location?</h2>
+              <h2 className="text-2xl font-black text-navy">Sort centres by distance</h2>
               <p className="mt-2 text-base leading-7 text-slate-700">
-                Use the location finder to sort listed centres by approximate distance in miles.
+                Use your current location (or a town/postcode) to rank listed hydrotherapy, physio, rehab and swimming providers by approximate miles.
               </p>
             </div>
             <Link
@@ -74,7 +79,7 @@ export default function DogHydrotherapyNearMePage() {
           <section>
             <h2 className="text-2xl font-black text-navy">Finding a dog hydrotherapy centre near you</h2>
             <p className="mt-4">
-              Searching for dog hydrotherapy near me is usually the start of a practical decision, not the end of one. Distance matters because many dogs need repeat appointments, but the closest centre is not always the right centre for every dog. A good search should help you compare location, facilities, therapist experience, referral requirements and the type of support available. HyperDog Therapy brings together public listing information for dog hydrotherapy, canine physiotherapy, rehabilitation and dog swimming providers so owners can build a sensible shortlist before contacting centres directly.
+              Searching for &quot;dog hydrotherapy near me&quot; should end in a shortlist of two or three centres you can call — not a single click. Distance matters because many dogs need repeat appointments, but the closest centre is not always the right fit. Compare location, facilities (pool vs treadmill), therapist experience, referral requirements and whether the team works with nervous, senior or post-operative dogs. HyperDog Therapy lists public information for hydrotherapy, canine physiotherapy, rehabilitation and dog swimming providers so you can compare before contacting centres directly.
             </p>
             <p className="mt-4">
               If you want the quickest route, use the <Link href="/near-me" className="font-black text-ocean">Near Me Finder</Link> to calculate approximate mileage from your browser location. If you prefer not to share location access, browse <Link href="/centres" className="font-black text-ocean">all centres</Link> or search by town, city, county or postcode. Partial outward postcodes such as LE, SW, M or B can be useful when you are comparing a wider area. Once you have a shortlist, visit each profile, check the provider website if available, and ask the centre whether your dog&apos;s needs match their facilities.

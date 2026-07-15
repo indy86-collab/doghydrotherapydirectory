@@ -177,7 +177,7 @@ export function ListingBenefits() {
   ];
 
   return (
-    <div className="grid gap-4 sm:grid-cols-2">
+    <div id="directory-benefits" className="scroll-mt-28 grid gap-4 sm:grid-cols-2">
       {benefits.map((benefit) => {
         const Icon = benefit.icon;
         return (

@@ -9,6 +9,8 @@ const columns = [
     links: [
       ["Home", "/"],
       ["Find a Centre", "/centres"],
+      ["Near Me", "/near-me"],
+      ["Dog Hydrotherapy Near Me", "/dog-hydrotherapy-near-me"],
       ["Locations", "/locations"],
       ["Guides & Advice", "/guides"],
       ["About Us", "/about"],
@@ -30,7 +32,7 @@ const columns = [
     title: "For centres",
     links: [
       ["List Your Centre", "/list-your-centre"],
-      ["Directory Benefits", "/list-your-centre"],
+      ["Directory Benefits", "/list-your-centre#directory-benefits"],
       ["Help Centre", "/contact"]
     ]
   }

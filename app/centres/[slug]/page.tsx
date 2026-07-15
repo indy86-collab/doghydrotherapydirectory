@@ -271,7 +271,11 @@ export default async function CentreDetailPage({ params }: PageProps) {
               Owners searching in {centre.city} may also compare nearby providers in {centre.region}. Check travel time, parking, accessibility and whether the centre can accommodate your dog&apos;s size, mobility and confidence level.
             </p>
             <p className="mt-4 text-sm leading-6 text-slate-700">
-              Found an outdated phone number, website, address or service tag? Please use the contact page to request a correction with the page URL and source.
+              Found an outdated phone number, website, address or service tag? Please use the{" "}
+              <Link href="/contact" className="font-bold text-ocean underline decoration-ocean/30 underline-offset-2 hover:decoration-ocean">
+                contact page
+              </Link>{" "}
+              to request a correction with the page URL and source.
             </p>
           </article>
         </section>

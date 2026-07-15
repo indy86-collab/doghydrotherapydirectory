@@ -135,12 +135,30 @@ function checkConsentManagedAnalytics() {
   if (!privacyPage.includes("only after analytics consent is saved")) fail("Privacy policy does not describe analytics consent behavior.");
 }
 
+function checkConsentManagedAds() {
+  const layout = read("app/layout.tsx");
+  const ads = read("components/ConsentManagedAds.tsx");
+  const cookiesPage = read("app/cookies/page.tsx");
+  const privacyPage = read("app/privacy-policy/page.tsx");
+
+  if (!exists("components/ConsentManagedAds.tsx")) fail("ConsentManagedAds component is missing.");
+  if (!layout.includes("<ConsentManagedAds />")) fail("Root layout does not include consent-managed ads loader.");
+  if (!ads.includes("NEXT_PUBLIC_ADSENSE_CLIENT")) fail("AdSense loader must be gated on NEXT_PUBLIC_ADSENSE_CLIENT.");
+  if (!ads.includes("parsed.marketing === true")) fail("AdSense loader must require marketing consent.");
+  if (ads.includes("data-ad-slot") && !ads.includes("if (!client || !enabled) return null")) {
+    fail("AdSense units must not render without client env and marketing consent.");
+  }
+  if (!cookiesPage.includes("Advertising cookies")) fail("Cookies policy missing advertising cookies section.");
+  if (!privacyPage.includes("advertising consent")) fail("Privacy policy should mention advertising consent gating.");
+}
+
 checkNoDeprecatedCopy();
 checkLoginIsNotThinPage();
 checkLocationMatching();
 checkReviewSafety();
 checkEnrichmentAndTransparency();
 checkConsentManagedAnalytics();
+checkConsentManagedAds();
 
 const output = {
   checkedAt: new Date().toISOString(),
@@ -150,7 +168,8 @@ const output = {
     "strict-location-matching",
     "review-safety",
     "listing-enrichment-transparency",
-    "consent-managed-analytics"
+    "consent-managed-analytics",
+    "consent-managed-ads"
   ],
   issues
 };

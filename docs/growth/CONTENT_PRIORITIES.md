@@ -22,10 +22,10 @@ HyperDog Therapy uses **`/guides`** as editorial SEO content. There is no separa
 
 Until GSC data overrides, prioritize refreshing:
 
-- `/guides/how-much-does-dog-hydrotherapy-cost`
-- `/guides/how-to-choose-a-canine-hydrotherapy-centre`
-- `/guides/what-is-dog-hydrotherapy`
-- `/dog-hydrotherapy-near-me`
+- `/guides/how-much-does-dog-hydrotherapy-cost` — refreshed 2026-07-15 (answer-first opening + dateModified)
+- `/guides/how-to-choose-a-canine-hydrotherapy-centre` — refreshed 2026-07-15
+- `/guides/what-is-dog-hydrotherapy` — refreshed 2026-07-15
+- `/dog-hydrotherapy-near-me` — refreshed 2026-07-15 (meta + lead answer)
 - `/centres` and top centre profiles by impressions
 
-Update `dateModified` in [`lib/guide-dates.ts`](../../lib/guide-dates.ts) when you materially edit copy.
+Update `dateModified` in [`lib/guide-dates.ts`](../../lib/guide-dates.ts) when you materially edit copy. Also sync high-priority slugs in [`public/llms.txt`](../../public/llms.txt) and [`public/.well-known/llms.txt`](../../public/.well-known/llms.txt).

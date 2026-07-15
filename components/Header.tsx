@@ -1,22 +1,142 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import Link from "next/link";
 import { ArrowRight, ChevronDown, Menu, PawPrint, X } from "lucide-react";
 
-const navItems = [
+type NavChild = { href: string; label: string };
+type NavItem = {
+  href: string;
+  label: string;
+  children?: NavChild[];
+};
+
+const navItems: NavItem[] = [
   { href: "/", label: "Home" },
-  { href: "/centres", label: "Find a Centre", dropdown: true },
+  {
+    href: "/centres",
+    label: "Find a Centre",
+    children: [
+      { href: "/centres", label: "Browse all centres" },
+      { href: "/near-me", label: "Near me (distance sort)" },
+      { href: "/dog-hydrotherapy-near-me", label: "Dog hydrotherapy near me" },
+      { href: "/list-your-centre", label: "List your centre" }
+    ]
+  },
   { href: "/near-me", label: "Near Me" },
-  { href: "/locations", label: "Locations", dropdown: true },
-  { href: "/guides", label: "Guides", dropdown: true },
+  {
+    href: "/locations",
+    label: "Locations",
+    children: [
+      { href: "/locations", label: "All locations" },
+      { href: "/locations/london", label: "London" },
+      { href: "/locations/belfast", label: "Belfast" },
+      { href: "/locations/romsey", label: "Romsey" },
+      { href: "/locations/goole", label: "Goole" },
+      { href: "/locations/northampton", label: "Northampton" },
+      { href: "/locations/maghera", label: "Maghera" }
+    ]
+  },
+  {
+    href: "/guides",
+    label: "Guides",
+    children: [
+      { href: "/guides", label: "All guides" },
+      { href: "/guides/what-is-dog-hydrotherapy", label: "What is dog hydrotherapy?" },
+      { href: "/guides/how-much-does-dog-hydrotherapy-cost", label: "Hydrotherapy cost UK" },
+      { href: "/guides/how-to-choose-a-canine-hydrotherapy-centre", label: "How to choose a centre" },
+      { href: "/guides/dog-physiotherapy-explained", label: "Dog physiotherapy" },
+      { href: "/guides/senior-dog-mobility-support", label: "Senior dog mobility" }
+    ]
+  },
   { href: "/faqs", label: "FAQs" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" }
 ];
 
+function DesktopDropdown({ item }: { item: NavItem }) {
+  const [open, setOpen] = useState(false);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const menuId = useId();
+
+  function clearCloseTimer() {
+    if (closeTimer.current) {
+      clearTimeout(closeTimer.current);
+      closeTimer.current = null;
+    }
+  }
+
+  function scheduleClose() {
+    clearCloseTimer();
+    closeTimer.current = setTimeout(() => setOpen(false), 120);
+  }
+
+  useEffect(() => () => clearCloseTimer(), []);
+
+  if (!item.children?.length) {
+    return (
+      <Link
+        href={item.href}
+        className="group flex items-center gap-1.5 border-b-2 border-transparent py-4 transition hover:border-ocean hover:text-ocean"
+      >
+        {item.label}
+      </Link>
+    );
+  }
+
+  return (
+    <div
+      className="relative"
+      onMouseEnter={() => {
+        clearCloseTimer();
+        setOpen(true);
+      }}
+      onMouseLeave={scheduleClose}
+      onFocus={() => {
+        clearCloseTimer();
+        setOpen(true);
+      }}
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+          setOpen(false);
+        }
+      }}
+    >
+      <Link
+        href={item.href}
+        className="group flex items-center gap-1.5 border-b-2 border-transparent py-4 transition hover:border-ocean hover:text-ocean"
+        aria-expanded={open}
+        aria-haspopup="true"
+        aria-controls={menuId}
+      >
+        {item.label}
+        <ChevronDown size={14} className={`transition ${open ? "rotate-180" : ""}`} />
+      </Link>
+      <div
+        id={menuId}
+        role="menu"
+        className={`absolute left-0 top-full z-50 min-w-[240px] rounded-xl border border-sky-100 bg-white p-2 shadow-soft transition ${
+          open ? "visible translate-y-0 opacity-100" : "invisible -translate-y-1 opacity-0"
+        }`}
+      >
+        {item.children.map((child) => (
+          <Link
+            key={child.href + child.label}
+            href={child.href}
+            role="menuitem"
+            className="block rounded-lg px-3 py-2.5 text-sm font-bold text-navy transition hover:bg-mist hover:text-ocean"
+          >
+            {child.label}
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [expandedMobile, setExpandedMobile] = useState<string | null>(null);
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
@@ -27,6 +147,7 @@ export function Header() {
 
   function closeMenu() {
     setMenuOpen(false);
+    setExpandedMobile(null);
   }
 
   return (
@@ -42,16 +163,9 @@ export function Header() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-5 text-sm font-bold text-navy lg:flex">
+        <nav className="hidden items-center gap-5 text-sm font-bold text-navy lg:flex" aria-label="Primary">
           {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="group flex items-center gap-1.5 border-b-2 border-transparent py-4 transition hover:border-ocean hover:text-ocean"
-            >
-              {item.label}
-              {item.dropdown ? <ChevronDown size={14} /> : null}
-            </Link>
+            <DesktopDropdown key={item.href + item.label} item={item} />
           ))}
         </nav>
 
@@ -77,20 +191,51 @@ export function Header() {
 
       <div
         id="mobile-navigation"
-        className={`fixed inset-x-0 top-[65px] z-40 h-[calc(100dvh-65px)] bg-white/98 px-4 pb-6 pt-3 shadow-soft transition sm:top-[73px] sm:h-[calc(100dvh-73px)] lg:hidden ${menuOpen ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-3 opacity-0"}`}
+        className={`fixed inset-x-0 top-[65px] z-40 h-[calc(100dvh-65px)] overflow-y-auto bg-white/98 px-4 pb-6 pt-3 shadow-soft transition sm:top-[73px] sm:h-[calc(100dvh-73px)] lg:hidden ${menuOpen ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-3 opacity-0"}`}
       >
         <nav aria-label="Mobile navigation" className="flex h-full flex-col">
           <div className="space-y-2">
             {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={closeMenu}
-                className="flex min-h-12 items-center justify-between rounded-xl bg-mist px-4 py-3 text-base font-black text-navy ring-1 ring-sky-100"
-              >
-                {item.label}
-                <ArrowRight size={17} className="text-ocean" />
-              </Link>
+              <div key={item.href + item.label} className="rounded-xl bg-mist ring-1 ring-sky-100">
+                <div className="flex min-h-12 items-stretch">
+                  <Link
+                    href={item.href}
+                    onClick={closeMenu}
+                    className="flex flex-1 items-center px-4 py-3 text-base font-black text-navy"
+                  >
+                    {item.label}
+                  </Link>
+                  {item.children?.length ? (
+                    <button
+                      type="button"
+                      aria-label={`Expand ${item.label} links`}
+                      aria-expanded={expandedMobile === item.label}
+                      className="grid w-12 place-items-center text-ocean"
+                      onClick={() => setExpandedMobile((current) => (current === item.label ? null : item.label))}
+                    >
+                      <ChevronDown size={18} className={`transition ${expandedMobile === item.label ? "rotate-180" : ""}`} />
+                    </button>
+                  ) : (
+                    <span className="grid w-12 place-items-center text-ocean">
+                      <ArrowRight size={17} />
+                    </span>
+                  )}
+                </div>
+                {item.children?.length && expandedMobile === item.label ? (
+                  <div className="space-y-1 border-t border-sky-100 px-2 py-2">
+                    {item.children.map((child) => (
+                      <Link
+                        key={child.href + child.label}
+                        href={child.href}
+                        onClick={closeMenu}
+                        className="block rounded-lg px-3 py-2.5 text-sm font-bold text-slate-700 hover:bg-white hover:text-ocean"
+                      >
+                        {child.label}
+                      </Link>
+                    ))}
+                  </div>
+                ) : null}
+              </div>
             ))}
           </div>
           <Link

@@ -41,8 +41,8 @@ export const guides: Guide[] = [
       "The right plan depends on your dog's diagnosis, confidence, weight, age and pain level."
     ],
     body: [
-      "Dog hydrotherapy uses warm water, buoyancy and controlled movement to help dogs exercise with less load through sore joints or recovering tissues. It is often used alongside veterinary treatment, canine physiotherapy and home exercise plans.",
-      "It is not only for dogs who love swimming. Many centres use life jackets, ramps, hoists, underwater treadmills and calm handling to support nervous, older or post-operative dogs."
+      "Dog hydrotherapy is warm-water exercise used to help dogs move with less load through joints or recovering tissues. In the UK it is commonly considered for arthritis, post-surgery rehab, muscle loss, weight management and controlled fitness when long walks are difficult — always alongside veterinary advice.",
+      "It is not only for dogs who love swimming. Many centres use life jackets, ramps, hoists, underwater treadmills and calm handling to support nervous, older or post-operative dogs. Use this guide to decide whether to ask your vet about a referral, then compare centres on HyperDog Therapy before booking."
     ],
     sections: [
       {
@@ -202,7 +202,7 @@ export const guides: Guide[] = [
   {
     slug: "how-much-does-dog-hydrotherapy-cost",
     title: "How much does dog hydrotherapy cost in the UK?",
-    description: "UK price ranges, what affects session fees, insurance paperwork, and questions to ask before booking a course of hydrotherapy.",
+    description: "Typical UK hydrotherapy session and course prices, what drives fees, insurance paperwork, and questions to ask before you book.",
     imageLabel: "Cost guide",
     imageSrc: "/images/guide-hydrotherapy-cost.jpg",
     readTime: "6 min read",
@@ -213,8 +213,8 @@ export const guides: Guide[] = [
       "Some insurance policies may contribute when treatment is vet-referred."
     ],
     body: [
-      "Dog hydrotherapy prices vary across the UK and Ireland. A first appointment may cost more than follow-up sessions because it includes assessment, history taking and planning.",
-      "The cheapest option is not always best. For rehabilitation, quality of assessment, safety, water hygiene, handling and communication are more important than price alone."
+      "Dog hydrotherapy in the UK typically costs roughly £30–£60 per follow-up session, with first assessments often higher because they include history, gait review and a tailored plan. Exact prices vary by region, pool vs underwater treadmill, session length and whether a physiotherapist is involved — always confirm fees with the centre.",
+      "The cheapest option is not always best. For rehabilitation, quality of assessment, safety, water hygiene, handling and communication matter more than price alone. Ask for assessment fees, package deals, cancellation terms and whether invoices or reports can support an insurance claim."
     ],
     sections: [
       {
@@ -556,7 +556,7 @@ export const guides: Guide[] = [
   {
     slug: "how-to-choose-a-canine-hydrotherapy-centre",
     title: "How to choose a dog hydrotherapy centre in the UK",
-    description: "Compare hydrotherapy centres by referral rules, qualifications, facilities, safety, reviews and cost — before you book.",
+    description: "Compare UK dog hydrotherapy centres by referral rules, qualifications, facilities, safety, reviews and cost — before you book.",
     imageLabel: "Choosing a centre",
     imageSrc: "/images/guide-choose-hydrotherapy-centre.jpg",
     readTime: "6 min read",
@@ -567,8 +567,8 @@ export const guides: Guide[] = [
       "Your dog should be handled calmly and never rushed."
     ],
     body: [
-      "Choosing a dog hydrotherapy centre is about trust. You are placing your dog in a specialist environment where handling, water quality and clinical judgement all matter.",
-      "Use the checklist below when comparing centres near you."
+      "Choose a dog hydrotherapy centre by checking veterinary referral or consent rules, therapist qualifications, water hygiene, calm handling, and whether they write clear goals — not distance or price alone. Shortlist two or three providers near you, then call with your dog's diagnosis and temperament before booking.",
+      "You are placing your dog in a specialist environment where handling, water quality and clinical judgement all matter. Use the checklist below when comparing centres on HyperDog Therapy or in your area."
     ],
     sections: [
       {

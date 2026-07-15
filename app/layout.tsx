@@ -5,6 +5,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CookieConsent } from "@/components/CookieConsent";
 import { ConsentManagedAnalytics } from "@/components/ConsentManagedAnalytics";
+import { ConsentManagedAds } from "@/components/ConsentManagedAds";
 import { buildOrganizationJsonLd, buildWebSiteJsonLd, getDefaultOgImageUrl } from "@/lib/seo";
 import { getSiteUrl, SITE_BRAND_NAME } from "@/lib/site";
 
@@ -53,6 +54,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
         <CookieConsent />
         <ConsentManagedAnalytics />
+        <ConsentManagedAds />
       </body>
     </html>
   );

@@ -2,12 +2,24 @@
 
 Complete this once, then reuse [MONTHLY_SEO_REVIEW.md](./MONTHLY_SEO_REVIEW.md) each month.
 
+**Owner actions (manual — not automatable in-repo):** verify the property, submit the sitemap, fill the tables below, and only apply AdSense after live QA. Code changes for SEO/LLM/AdSense gating shipped 2026-07-15; keep `NEXT_PUBLIC_ADSENSE_CLIENT` unset until approved.
+
 ## Setup (one-time)
 
-1. Add property: `https://www.dogtherapycentres.co.uk` (URL-prefix or Domain property).
-2. Verify ownership (DNS TXT or HTML tag on Vercel).
-3. Submit sitemap: `https://www.dogtherapycentres.co.uk/sitemap.xml`
-4. Confirm `NEXT_PUBLIC_SITE_URL` in Vercel matches the primary domain (no trailing slash).
+- [ ] Add property: `https://www.dogtherapycentres.co.uk` (URL-prefix or Domain property).
+- [ ] Verify ownership (DNS TXT or HTML tag on Vercel).
+- [ ] Submit sitemap: `https://www.dogtherapycentres.co.uk/sitemap.xml`
+- [ ] Confirm `NEXT_PUBLIC_SITE_URL` in Vercel matches the primary domain (no trailing slash).
+- [ ] URL Inspection: check `/`, `/centres`, `/guides/how-much-does-dog-hydrotherapy-cost`, `/dog-hydrotherapy-near-me`.
+- [ ] Review Pages → Why pages aren’t indexed (especially thin location pages — those should stay noindex until ≥2 listings).
+
+## Before AdSense application
+
+- [ ] Production contact + list-your-centre forms deliver (Resend).
+- [ ] Mobile/desktop pass of home, centres, guides, legal pages.
+- [ ] External crawl (Screaming Frog or similar) for internal 404s.
+- [ ] GSC shows healthy indexing of sitemap URLs that are meant to be indexed.
+- [ ] Only then set `NEXT_PUBLIC_ADSENSE_CLIENT=ca-pub-…` in Vercel and place at most one ad unit per page.
 
 ## Baseline export (fill in after 7–14 days of data)
 

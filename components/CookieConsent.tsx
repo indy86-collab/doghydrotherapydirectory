@@ -57,7 +57,7 @@ export function CookieConsent() {
         </div>
 
         <p className="mt-3 text-sm leading-6 text-slate-700">
-          We use necessary cookies to keep the site working. With your consent, we may later use analytics or advertising cookies to understand site use and support the directory. You can change your choice before optional cookies are enabled.
+          We use necessary cookies to keep the site working. With your consent, we may use analytics cookies and — only if advertising is enabled on the site — advertising cookies (for example Google AdSense) to understand site use and support the directory.
         </p>
         <p className="mt-2 text-xs font-semibold text-slate-500">
           Read our <Link href="/privacy-policy" className="text-ocean underline">Privacy Policy</Link> and <Link href="/cookies" className="text-ocean underline">Cookies Policy</Link>.
@@ -82,7 +82,9 @@ export function CookieConsent() {
             <label className="flex items-start justify-between gap-4">
               <span>
                 <span className="block text-sm font-black text-navy">Advertising cookies</span>
-                <span className="mt-1 block text-xs leading-5 text-slate-600">Reserved for future ad measurement if ads are added after approval.</span>
+                <span className="mt-1 block text-xs leading-5 text-slate-600">
+                  Used only if Google AdSense (or similar) is enabled after approval, to serve and measure ads.
+                </span>
               </span>
               <input type="checkbox" checked={marketing} onChange={(event) => setMarketing(event.target.checked)} className="mt-1 h-5 w-5 accent-ocean" />
             </label>
