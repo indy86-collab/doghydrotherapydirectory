@@ -25,6 +25,11 @@ Until GSC data overrides, prioritize refreshing:
 - `/guides/how-much-does-dog-hydrotherapy-cost` — refreshed 2026-07-15 (answer-first opening + dateModified)
 - `/guides/how-to-choose-a-canine-hydrotherapy-centre` — refreshed 2026-07-15
 - `/guides/what-is-dog-hydrotherapy` — refreshed 2026-07-15
+- `/guides/benefits-of-dog-hydrotherapy` — added 2026-08-01
+- `/guides/how-often-dog-hydrotherapy` — added 2026-08-01
+- `/guides/elbow-dysplasia-hydrotherapy-dogs` — added 2026-08-01
+- `/guides/dog-hydrotherapy-qualifications-uk` — added 2026-08-01
+- `/guides/luxating-patella-hydrotherapy-dogs` — added 2026-08-01
 - `/dog-hydrotherapy-near-me` — refreshed 2026-07-15 (meta + lead answer)
 - `/centres` and top centre profiles by impressions
 

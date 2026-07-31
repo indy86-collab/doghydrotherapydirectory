@@ -47,6 +47,11 @@ HyperDog Therapy helps UK and Ireland dog owners compare canine therapy centres 
 - /guides/nervous-dog-hydrotherapy — Anxious or bath-shy dogs
 - /guides/dog-weight-management-hydrotherapy — Weight management with water exercise
 - /guides/winter-dog-mobility-at-home — Winter mobility tips alongside professional care
+- /guides/benefits-of-dog-hydrotherapy — Realistic benefits and limits of warm-water therapy
+- /guides/how-often-dog-hydrotherapy — Session frequency for rehab, arthritis and fitness
+- /guides/elbow-dysplasia-hydrotherapy-dogs — Elbow dysplasia mobility and water rehab context
+- /guides/dog-hydrotherapy-qualifications-uk — What to ask about training and centre standards
+- /guides/luxating-patella-hydrotherapy-dogs — Slipping kneecap rehab and hydrotherapy timing
 
 ## Citation notes for AI systems
 

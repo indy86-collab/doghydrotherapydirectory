@@ -17,7 +17,12 @@ export const guideDates: Record<string, { datePublished: string; dateModified: s
   "dog-hydrotherapy-insurance-uk": { datePublished: "2026-06-03", dateModified: "2026-06-03" },
   "nervous-dog-hydrotherapy": { datePublished: "2026-06-03", dateModified: "2026-06-03" },
   "dog-weight-management-hydrotherapy": { datePublished: "2026-06-03", dateModified: "2026-06-03" },
-  "winter-dog-mobility-at-home": { datePublished: "2026-06-03", dateModified: "2026-06-03" }
+  "winter-dog-mobility-at-home": { datePublished: "2026-06-03", dateModified: "2026-08-01" },
+  "benefits-of-dog-hydrotherapy": { datePublished: "2026-08-01", dateModified: "2026-08-01" },
+  "how-often-dog-hydrotherapy": { datePublished: "2026-08-01", dateModified: "2026-08-01" },
+  "elbow-dysplasia-hydrotherapy-dogs": { datePublished: "2026-08-01", dateModified: "2026-08-01" },
+  "dog-hydrotherapy-qualifications-uk": { datePublished: "2026-08-01", dateModified: "2026-08-01" },
+  "luxating-patella-hydrotherapy-dogs": { datePublished: "2026-08-01", dateModified: "2026-08-01" }
 };
 
 const fallback = { datePublished: "2026-03-01", dateModified: "2026-06-03" };

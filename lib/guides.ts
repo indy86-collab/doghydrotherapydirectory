@@ -918,7 +918,7 @@ export const guides: Guide[] = [
     title: "Winter mobility support for older dogs at home",
     description: "Practical home safety, exercise and comfort tips for stiff senior dogs — alongside vet care and therapy where appropriate.",
     imageLabel: "Winter mobility",
-    imageSrc: "/images/guide-senior-dog-mobility.jpg",
+    imageSrc: "/images/guide-senior-dog-mobility-guide.jpg",
     readTime: "6 min read",
     category: "Conditions",
     keyTakeaways: [
@@ -966,6 +966,427 @@ export const guides: Guide[] = [
       {
         question: "Can hydrotherapy replace winter walks?",
         answer: "It may supplement activity for some dogs when vet-approved, but most still need appropriate outdoor toileting walks and mental stimulation."
+      }
+    ]
+  },
+  {
+    slug: "benefits-of-dog-hydrotherapy",
+    title: "Benefits of dog hydrotherapy: what it can (and cannot) do",
+    description: "A clear, vet-led look at how warm-water therapy may support mobility, strength and confidence — and when it is the wrong choice for your dog.",
+    imageLabel: "Benefits of hydrotherapy",
+    imageSrc: "/images/service-dog-hydrotherapy.jpg",
+    readTime: "9 min read",
+    category: "Getting started",
+    keyTakeaways: [
+      "Hydrotherapy uses buoyancy and warm water to support controlled movement with less joint load than many land walks.",
+      "Benefits depend on diagnosis, pain control, handler skill and a realistic plan — not on water alone.",
+      "It supports management and rehab goals; it does not reverse structural disease or replace veterinary care."
+    ],
+    body: [
+      "When people search for the benefits of dog hydrotherapy, they usually want a straight answer: will warm-water exercise help my dog move more comfortably? For many dogs with arthritis, post-surgery weakness, muscle loss or limited land exercise, the answer can be yes — when a vet agrees it is appropriate and a trained therapist adapts each session.",
+      "Buoyancy reduces load through joints and recovering tissues, while water resistance encourages muscle work without the pounding of pavement. That combination is why UK centres use pools and underwater treadmills for rehabilitation and carefully paced fitness. Results still vary. A nervous, painful or medically unstable dog may need a different starting point, and some conditions are better managed on land first.",
+      "Use this guide to understand realistic benefits, common myths, and the questions that separate clinical hydrotherapy from a casual swim. When you are ready to compare providers, browse centres on HyperDog Therapy and shortlist ones that ask for veterinary consent and explain goals clearly."
+    ],
+    sections: [
+      {
+        heading: "The benefits owners most often notice",
+        body: [
+          "Owners rarely describe hydrotherapy as dramatic overnight change. More often they report steadier rising from rest, more even weight bearing, better willingness to walk short distances, or improved confidence around movement after a planned course.",
+          "Those changes matter because daily life is made of small tasks: getting into the car, navigating stairs, toileting outdoors and keeping muscle that supports painful joints. Warm water can make early practice of those movement patterns more tolerable when land exercise is limited."
+        ],
+        bullets: [
+          "Lower-impact exercise when walks cause stiffness or lameness",
+          "Support for muscle maintenance during restricted activity",
+          "Controlled cardiovascular work for dogs who cannot tolerate long outings",
+          "Confidence building for dogs who have become hesitant or uneven",
+          "A structured review point with a therapist who watches gait and fatigue"
+        ]
+      },
+      {
+        heading: "Why warm water changes the exercise equation",
+        body: [
+          "On land, every step transmits force through paws, joints and the spine. In water, buoyancy offsets part of that load. Raising the water level generally increases support; lowering it increases weight bearing. Therapists use that lever carefully, especially after surgery or during flare-ups.",
+          "Warmth may also encourage softer muscle tone and more willing movement in some stiff dogs. That is helpful, but warmth is not pain relief on its own. If your dog is still uncomfortable at home, ask your vet about the wider plan before adding more exercise of any kind."
+        ]
+      },
+      {
+        heading: "Pool work versus underwater treadmill benefits",
+        body: [
+          "Swimming is non-weight-bearing and can suit fitness, confidence or certain rehab stages, but it does not recreate a walking pattern. An underwater treadmill keeps the dog in a gait pattern while water height, belt speed and duration are adjusted.",
+          "Neither option is universally better. A dog recovering from knee surgery may need precise treadmill walking; a dog rebuilding stamina after a long rest may later use pool work. The benefit comes from matching the tool to the goal, not from choosing the trendiest facility."
+        ]
+      },
+      {
+        heading: "What hydrotherapy cannot do",
+        body: [
+          "Hydrotherapy cannot remodel a dysplastic joint, heal a torn cruciate ligament, or replace surgery when surgery is needed. It also cannot fix pain that has not been properly investigated. If lameness is new, worsening or unexplained, start with your vet — not a swim booking.",
+          "Be wary of marketing that promises transformation for every dog. A responsible centre will talk about assessment, progression and times when sessions should stop or be shortened."
+        ]
+      },
+      {
+        heading: "Who is most likely to benefit",
+        body: [
+          "Dogs commonly referred for hydrotherapy include those with osteoarthritis, hip or elbow dysplasia management plans, post-operative orthopaedic rehab, neurological recovery under specialist guidance, and weight-related mobility limits.",
+          "Fitness clients without a diagnosis can still benefit from supervised water exercise, but they should still be honest about age, breed risks and any subtle stiffness. Recreational swimming and clinical hydrotherapy are not the same service — see our swimming versus hydrotherapy guide if you are unsure which you need."
+        ]
+      },
+      {
+        heading: "How to judge whether the benefits are worth booking",
+        body: [
+          "Ask what problem the sessions are meant to change in four to six weeks: stronger hindlimb drive, more symmetrical stride, safer rising, better stamina, or calmer water confidence. Vague packages with no review points are a weaker buy than a short assessed course with clear checkpoints.",
+          "Also ask about cost, insurance paperwork, handling for nervous dogs and whether the team will share notes with your vet. Practical details often decide whether a plan is sustainable for your household."
+        ]
+      }
+    ],
+    faqs: [
+      {
+        question: "How soon might I see benefits from dog hydrotherapy?",
+        answer: "Some dogs look more relaxed or confident after early sessions, but strength and gait changes usually need a planned course with reviews. Your therapist should set expectations based on your dog's diagnosis and baseline."
+      },
+      {
+        question: "Are the benefits of hydrotherapy the same for every dog?",
+        answer: "No. Age, pain level, body condition, temperament, surgical status and home management all change what is realistic. Two dogs with the same diagnosis can need different session designs."
+      },
+      {
+        question: "Can hydrotherapy help a healthy dog stay fit?",
+        answer: "Supervised fitness swimming or treadmill work can be useful enrichment and conditioning for some dogs, especially when weather or pavement limits land exercise. It should still be introduced gradually and stopped if the dog shows pain or distress."
+      },
+      {
+        question: "Is hydrotherapy better than physiotherapy?",
+        answer: "They often work together rather than compete. Physiotherapy may focus on assessment, manual techniques and land exercises; hydrotherapy is one way to load movement in water. Your vet can help you decide which to start with."
+      }
+    ]
+  },
+  {
+    slug: "how-often-dog-hydrotherapy",
+    title: "How often should my dog have hydrotherapy?",
+    description: "Typical UK session schedules for arthritis, post-surgery rehab and fitness — plus how to know when to increase, reduce or pause.",
+    imageLabel: "Hydrotherapy frequency",
+    imageSrc: "/images/guide-first-hydrotherapy-session.jpg",
+    readTime: "8 min read",
+    category: "Getting started",
+    keyTakeaways: [
+      "There is no single correct frequency — plans usually start with assessment, then one or two sessions a week, then taper as goals are met.",
+      "Post-surgery and neurological cases need vet-led timing; more sessions are not automatically better.",
+      "Watch recovery between visits: worsening lameness, extreme fatigue or reluctance means the plan needs review."
+    ],
+    body: [
+      "One of the first practical questions owners ask is how often their dog should attend hydrotherapy. Frequency depends on why you are booking: short-term rehabilitation after surgery looks different from long-term arthritis support or occasional fitness swims.",
+      "In the UK, many therapeutic plans begin with an assessment, then roughly weekly or twice-weekly sessions for a defined block, followed by a review. That is a pattern, not a rule. Pain, wound healing, heart or breathing concerns, anxiety and your dog's response after each visit all matter more than a generic timetable.",
+      "This guide helps you ask better scheduling questions before you buy a large package. Compare centres on HyperDog Therapy, then confirm the proposed frequency with both the therapist and your vet."
+    ],
+    sections: [
+      {
+        heading: "Typical patterns you may hear about",
+        body: [
+          "After the first assessment, centres often suggest a short course — for example four to eight sessions — rather than an open-ended weekly booking forever. That gives enough repetition to build skill and strength while forcing a progress check.",
+          "Arthritis or senior mobility plans may settle into weekly or fortnightly maintenance once comfort and muscle are more stable. Fitness clients without clinical restrictions may attend less often, depending on other exercise."
+        ],
+        bullets: [
+          "Assessment first, then a defined starter block",
+          "One to two therapeutic sessions weekly is common early on",
+          "Maintenance may reduce to every one to two weeks",
+          "Fitness-only visits can be less frequent if land exercise is going well",
+          "Reviews should change the plan — not just renew the package"
+        ]
+      },
+      {
+        heading: "After surgery: why timing beats intensity",
+        body: [
+          "Post-operative dogs should only start when the vet or surgeon says tissues are ready. Early rehab may involve short, highly controlled sessions rather than long swims. Increasing frequency too quickly can overload a healing limb even in water.",
+          "Ask who decides progression: the surgeon's protocol, the rehab therapist, or both. Good centres would rather delay or shorten a session than chase a package schedule."
+        ]
+      },
+      {
+        heading: "Arthritis and long-term mobility support",
+        body: [
+          "For chronic joint disease, consistency often beats heroic bursts. A dog who attends calmly each week and recovers well may do better than a dog booked three times a week who is sore for two days after every visit.",
+          "Flare-ups, cold weather, weight gain and medication changes are reasons to temporarily reduce frequency. Keep a simple diary of stiffness after rest, walk length and willingness to exercise so reviews are based on facts."
+        ]
+      },
+      {
+        heading: "Signs the schedule is too much — or too little",
+        body: [
+          "Too much can look like increased limping the next day, reluctance to enter the car for appointments, excessive sleepiness, irritability when touched, or loss of appetite. Report those changes promptly.",
+          "Too little progress after a fair trial can mean the modality is wrong, pain control needs review, home exercise is missing, or expectations were unrealistic. Frequency is only one dial; technique and medical management are others."
+        ]
+      },
+      {
+        heading: "Building a schedule that fits real life",
+        body: [
+          "Travel time, work patterns, other pets and your dog's stress in the car all affect what is sustainable. A brilliant clinical plan that you cannot attend reliably is weaker than a slightly simpler plan you can keep.",
+          "Ask about cancellation rules, package expiry dates and whether unused sessions can be paused if your dog has a setback. Those details protect both welfare and your budget."
+        ]
+      },
+      {
+        heading: "Questions to ask before you commit",
+        body: [
+          "What frequency do you recommend for this diagnosis and stage? How will we know it is time to reduce? What would make you stop sessions? Will you write goals for the first month? Can you coordinate with our vet if recovery stalls?"
+        ]
+      }
+    ],
+    faqs: [
+      {
+        question: "Is twice a week better than once a week?",
+        answer: "Sometimes, especially early in rehab when controlled practice helps rebuild movement. It is not automatically better if your dog needs longer recovery between sessions or becomes stressed by frequent visits."
+      },
+      {
+        question: "How long is a typical course of dog hydrotherapy?",
+        answer: "Many centres review after several weeks rather than promising a fixed end date. Surgery cases follow clinical milestones; chronic conditions may move into maintenance. Ask for a review point in writing."
+      },
+      {
+        question: "Can I take my dog swimming on other days as well?",
+        answer: "Ask your therapist first. Extra recreational swimming can undo carefully dosed rehab, especially after surgery or during a flare-up."
+      },
+      {
+        question: "Should hydrotherapy continue forever?",
+        answer: "Not necessarily. Some dogs graduate to home management and land exercise; others benefit from ongoing maintenance. The decision should follow reassessment, not habit."
+      }
+    ]
+  },
+  {
+    slug: "elbow-dysplasia-hydrotherapy-dogs",
+    title: "Hydrotherapy for elbow dysplasia in dogs",
+    description: "How water-based rehab may support dogs with elbow dysplasia, what owners should watch for, and questions to ask your vet and therapist.",
+    imageLabel: "Elbow dysplasia support",
+    imageSrc: "/images/guide-arthritis.jpg",
+    readTime: "8 min read",
+    category: "Mobility",
+    keyTakeaways: [
+      "Elbow dysplasia is a developmental elbow problem that often leads to osteoarthritis; hydrotherapy may support muscle and controlled movement as part of a vet-led plan.",
+      "Young, growing dogs and post-operative cases need especially careful dosing — more water exercise is not always safer.",
+      "Weight control, lead exercise rules and home flooring matter as much as the pool sessions."
+    ],
+    body: [
+      "Elbow dysplasia is a common cause of front-leg lameness in dogs, especially in larger breeds. It covers several developmental problems in the elbow joint and frequently leads to secondary arthritis. Owners often notice stiffness after rest, reduced willingness to jump, an uneven front gait or shortened stride on one side.",
+      "Hydrotherapy may be discussed because buoyancy can reduce load through a painful elbow while the dog still practices controlled movement. That can help maintain supporting muscle when pavement walks are limited. It is not a structural fix. Surgery, medication, weight management and activity modification may still be central, depending on your vet's findings.",
+      "If you are comparing UK centres for a dog with known or suspected elbow disease, look for teams comfortable with orthopaedic rehab and clear about progression. Start with veterinary advice, then use HyperDog Therapy to shortlist providers near you."
+    ],
+    sections: [
+      {
+        heading: "How elbow problems change movement",
+        body: [
+          "Dogs with elbow pain often shift weight, shorten stride or avoid pushing through the affected limb. Over time, that can mean muscle loss in the front assembly and compensatory strain through the neck, shoulders or opposite limb.",
+          "Rehab goals usually focus on comfort, symmetrical weight bearing, muscle support and safer daily activity — not athletic performance unless your vet clears that path."
+        ]
+      },
+      {
+        heading: "Where hydrotherapy may fit",
+        body: [
+          "Underwater treadmill work can be useful when the therapist wants a walking pattern with adjustable support. Pool work may help fitness later if the dog moves well and remains comfortable. Some dogs use land physiotherapy first, then water work once pain is better controlled.",
+          "Session design should respect flare-ups. A dog who is suddenly more lame needs veterinary review, not a tougher swim."
+        ],
+        bullets: [
+          "Controlled weight bearing with water support",
+          "Muscle work without pavement impact",
+          "Gradual stamina building when walks are capped",
+          "Confidence for dogs who have become hesitant to use a limb"
+        ]
+      },
+      {
+        heading: "Special care for young and post-operative dogs",
+        body: [
+          "Growing dogs with elbow dysplasia need plans that protect developing joints. Ask your vet what exercise volume is acceptable and whether certain impact activities should stay off the list even if the dog seems keen in water.",
+          "After elbow surgery, wound healing and surgeon protocols decide the start date. Early sessions may be short and closely spotted. Do not book recreational swimming during restricted periods unless your veterinary team explicitly agrees."
+        ]
+      },
+      {
+        heading: "Home management that supports therapy",
+        body: [
+          "Keep your dog lean — extra weight increases load through every step. Use non-slip flooring, control ball games that involve sudden turns, and follow lead-walking advice rather than weekend catch-up hikes.",
+          "Ramps can help some dogs avoid jumping into cars. Ask before starting home exercises; the wrong drill can irritate an already sensitive joint."
+        ]
+      },
+      {
+        heading: "What to ask the centre",
+        body: [
+          "Have you worked with elbow dysplasia or post-elbow surgery cases? Will you use pool, treadmill or both, and why? How do you monitor front-limb fatigue? What signs should make us pause between appointments? Can notes go to our vet?"
+        ]
+      }
+    ],
+    faqs: [
+      {
+        question: "Can hydrotherapy fix elbow dysplasia?",
+        answer: "No. It cannot correct the underlying joint development problem. It may support comfort, muscle and controlled activity as part of a broader veterinary plan."
+      },
+      {
+        question: "Is an underwater treadmill better than swimming for elbow dysplasia?",
+        answer: "Often treadmill work is chosen when gait pattern and graded weight bearing matter. Swimming may suit later fitness for some dogs. A therapist should decide after assessment and veterinary input."
+      },
+      {
+        question: "My young dog has elbow dysplasia — is water exercise safe?",
+        answer: "It can be appropriate for some dogs, but growing joints need careful dosing. Speak to your vet before starting and avoid unstructured intensive swimming."
+      },
+      {
+        question: "How will I know sessions are helping?",
+        answer: "Useful signs include more even front-limb use, easier rising, better tolerance of agreed walk lengths and less compensatory stiffness — reviewed over weeks, not after a single visit."
+      }
+    ]
+  },
+  {
+    slug: "dog-hydrotherapy-qualifications-uk",
+    title: "Dog hydrotherapy qualifications in the UK: what owners should check",
+    description: "How to ask about training, professional memberships and centre standards so you can book with more confidence — without getting lost in acronyms.",
+    imageLabel: "Qualifications checklist",
+    imageSrc: "/images/guide-choose-hydrotherapy-centre.jpg",
+    readTime: "8 min read",
+    category: "Choosing a centre",
+    keyTakeaways: [
+      "Ask who will handle your dog, what training they have completed, and whether the centre requires veterinary consent.",
+      "Memberships and course certificates are useful signals, but calm handling, water hygiene and clear clinical reasoning matter day to day.",
+      "Physiotherapists and hydrotherapists can have different scopes — know which service you are booking."
+    ],
+    body: [
+      "UK owners comparing dog hydrotherapy centres quickly run into abbreviations, course names and membership badges. Those details can be useful, but they are only part of safe practice. What you need is a clear answer to three questions: who assesses my dog, how do they decide the plan, and how do they keep water work safe?",
+      "There is no single public licence that every pool attendant must hold in the same way a vet is registered. That is why reputable centres lean on veterinary referral or consent, documented training, treatment notes and professional communities of practice. Your job as an owner is not to memorise every pathway — it is to ask precise questions and walk away from vague answers.",
+      "This guide translates the checklist into plain language so you can shortlist centres on HyperDog Therapy and ring with confidence."
+    ],
+    sections: [
+      {
+        heading: "Start with role clarity",
+        body: [
+          "Ask whether your appointment is with a canine hydrotherapist, a veterinary physiotherapist, or another rehab professional, and what that means for assessment and hands-on techniques. Titles are not interchangeable.",
+          "If your dog has a complex surgical or neurological history, ask whether the case is appropriate for that team or needs a different referral first."
+        ]
+      },
+      {
+        heading: "Training and continuing development",
+        body: [
+          "Good practitioners should be able to explain their hydrotherapy or physiotherapy training without sounding evasive. Ask what practical assessment they completed, whether they keep case notes, and how they stay current with rehab approaches.",
+          "Courses and memberships evolve, so treat any badge as a conversation starter rather than a final verdict. Pair credentials with how carefully they listen to your dog's history."
+        ],
+        bullets: [
+          "Who will be in the water or at the treadmill with my dog?",
+          "What training did they complete for canine hydrotherapy or rehab?",
+          "Do they require veterinary consent before treatment?",
+          "How is progress recorded and shared?",
+          "What happens if my dog becomes distressed or more lame?"
+        ]
+      },
+      {
+        heading: "Centre standards beyond personal certificates",
+        body: [
+          "Even a well-trained person needs a safe environment. Ask how often water quality is tested, how dogs enter and leave, what flotation and hoist options exist, how many dogs are treated at once, and what emergency procedures are in place.",
+          "Cleanliness, calm scheduling and enough staff for your dog's size and anxiety level are part of professional care, not extras."
+        ]
+      },
+      {
+        heading: "Insurance, invoices and paperwork",
+        body: [
+          "If you hope to claim on pet insurance, ask whether the centre's invoices and practitioner details are typically accepted by insurers for your type of policy. Rules differ, so confirm with your insurer as well.",
+          "Centres used to clinical work are usually comfortable providing referral forms, itemised bills and progress summaries for your vet."
+        ]
+      },
+      {
+        heading: "Red flags when discussing qualifications",
+        body: [
+          "Be cautious if nobody can say who will treat your dog, if veterinary input is dismissed for an injured or post-operative case, if there are no notes, or if marketing focuses only on fun without assessment.",
+          "Confidence should sound specific: your dog's condition, likely session design, risks and review points — not slogans."
+        ]
+      },
+      {
+        heading: "How this helps you choose on our directory",
+        body: [
+          "Use listing details as a starting point, then phone with the checklist above. Two centres a similar distance apart can differ widely in clinical focus, fitness offerings and experience with nervous or large-breed dogs.",
+          "For a wider buying guide, read how to choose a canine hydrotherapy centre alongside this qualifications overview."
+        ]
+      }
+    ],
+    faqs: [
+      {
+        question: "Does every UK dog hydrotherapy centre require the same qualification?",
+        answer: "No. Pathways and memberships vary. Focus on veterinary consent processes, who assesses your dog, practical experience with your dog's condition and how safety is managed."
+      },
+      {
+        question: "Is a veterinary physiotherapist the same as a hydrotherapist?",
+        answer: "Not necessarily. Physiotherapists may offer broader rehab assessment and land-based techniques; hydrotherapists specialise in water-based therapeutic exercise. Some centres have both. Ask what your dog will actually receive."
+      },
+      {
+        question: "Should I only book centres with a membership logo?",
+        answer: "Logos can be helpful signals, but they are not a substitute for a good assessment conversation. Verify what the membership means and still ask about water hygiene, handling and case suitability."
+      },
+      {
+        question: "What if staff are still training?",
+        answer: "Trainees can be part of a safe team when supervised appropriately. Ask who is responsible for clinical decisions and whether a qualified person leads your dog's sessions."
+      }
+    ]
+  },
+  {
+    slug: "luxating-patella-hydrotherapy-dogs",
+    title: "Luxating patella in dogs: rehab and hydrotherapy guide",
+    description: "What a slipping kneecap means for exercise, when water therapy may help after vet advice, and how to protect the knee at home.",
+    imageLabel: "Patella luxation rehab",
+    imageSrc: "/images/guide-cruciate-ligament-rehab.jpg",
+    readTime: "8 min read",
+    category: "Surgery recovery",
+    keyTakeaways: [
+      "A luxating patella means the kneecap slips out of its groove; severity and surgical decisions belong with your vet.",
+      "Hydrotherapy or physiotherapy may support muscle and controlled gait for some dogs before or after surgery — timing matters.",
+      "Avoid sudden twisting play and slippery floors while the knee is being managed."
+    ],
+    body: [
+      "Luxating patella — often described as a slipping or popping kneecap — is especially familiar to owners of small breeds, though larger dogs can be affected too. You might see intermittent skipping on a hind leg, a brief hop, or reluctance to jump. Some dogs seem unbothered between episodes; others develop ongoing lameness or secondary joint problems.",
+      "Rehabilitation and hydrotherapy enter the conversation when vets want to build quadriceps and hip muscle, improve controlled limb use, or support recovery after corrective surgery. Water work is not automatically indicated for every grade of luxation. Jumping into a busy pool at the wrong time can be unhelpful, particularly if the dog twists, fatigues or is not yet cleared for that level of activity.",
+      "This guide helps you prepare for veterinary and therapist conversations, then compare suitable centres through HyperDog Therapy."
+    ],
+    sections: [
+      {
+        heading: "Why muscle support matters around a slipping kneecap",
+        body: [
+          "The patella sits in a groove at the end of the femur and glides as the stifle (knee) bends. When alignment or groove depth is poor, the kneecap can luxate. Strong, balanced supporting muscles will not redesign bone, but they can help some dogs move more efficiently and cope better with daily loads.",
+          "That is why rehab plans often emphasise controlled strengthening rather than random exercise. The wrong kind of activity — frantic zoomies on laminate, repeated sofa jumping — can work against the plan."
+        ]
+      },
+      {
+        heading: "When hydrotherapy may be considered",
+        body: [
+          "Your vet may suggest water-based exercise as part of conservative management for selected cases, or as post-operative rehab once wounds are healed and protocols allow. Underwater treadmills are frequently chosen when therapists want a straight-line walking pattern with adjustable support.",
+          "Pool swimming can be useful later for fitness in some dogs, but early rehab usually prioritises quality of movement over distance or splashy enthusiasm."
+        ],
+        bullets: [
+          "Veterinary grading and imaging guide the overall plan",
+          "Pain and swelling should be addressed before hard exercise",
+          "Session length often starts short and builds with comfort",
+          "Progress is measured in gait and function, not just attendance"
+        ]
+      },
+      {
+        heading: "After patella surgery",
+        body: [
+          "Surgical techniques and aftercare instructions vary. Follow the surgeon's confinement and lead-walking rules even if your dog feels brighter than expected. Feeling better is not the same as being healed.",
+          "Ask the rehab team how they will coordinate with surgical timelines, when water entry is allowed, and which home exercises — if any — are appropriate each week."
+        ]
+      },
+      {
+        heading: "Home habits that protect the knee",
+        body: [
+          "Use rugs on slippery floors, block unplanned stair sprinting if advised, and lift small dogs into cars rather than letting them leap. Keep nails trimmed for grip. Maintain a healthy weight so every step carries less load.",
+          "If your dog skips or holds up a leg after play, pause high-impact games and contact your vet for advice rather than booking an extra intense session to compensate."
+        ]
+      },
+      {
+        heading: "Questions for your first rehab call",
+        body: [
+          "Do you regularly see luxating patella cases, including post-operative dogs? Will you use treadmill, pool or land exercises first? What confinement rules should we keep at home? What signs mean we should stop and call the vet? Can you share progress notes?"
+        ]
+      }
+    ],
+    faqs: [
+      {
+        question: "Can hydrotherapy stop a patella from luxating?",
+        answer: "No water programme can promise that. Some dogs improve functionally with muscle support and activity changes; others need surgery. Your vet should advise based on grade, symptoms and lifestyle."
+      },
+      {
+        question: "Is swimming safe if my dog's kneecap slips?",
+        answer: "Only with professional guidance. Poorly controlled swimming or slippery pool surrounds can be risky. Ask your vet and therapist before any recreational swim."
+      },
+      {
+        question: "How soon after patella surgery can rehab start?",
+        answer: "Timing depends on the procedure and your surgeon's protocol. Some controlled work begins early; water entry often waits until the surgical site is ready. Never guess from internet timelines alone."
+      },
+      {
+        question: "Should I still walk my dog between hydrotherapy sessions?",
+        answer: "Usually yes, within the limits your vet or therapist set. Short, controlled lead walks on sensible surfaces are different from free running. Confirm the plan for your dog's stage of recovery."
       }
     ]
   }

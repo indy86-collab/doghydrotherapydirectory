@@ -35,11 +35,13 @@ export default function GuidesPage() {
         <div className="mb-8 grid gap-3 rounded-2xl border border-sky-100 bg-white p-5 shadow-card sm:grid-cols-2 lg:grid-cols-4">
           {[
             ["What is hydrotherapy?", "/guides/what-is-dog-hydrotherapy"],
+            ["Benefits explained", "/guides/benefits-of-dog-hydrotherapy"],
+            ["How often to book", "/guides/how-often-dog-hydrotherapy"],
             ["Costs & insurance", "/guides/how-much-does-dog-hydrotherapy-cost"],
-            ["Nervous dogs", "/guides/nervous-dog-hydrotherapy"],
             ["Choosing a centre", "/guides/how-to-choose-a-canine-hydrotherapy-centre"],
-            ["Insurance claims", "/guides/dog-hydrotherapy-insurance-uk"],
-            ["Senior winter care", "/guides/winter-dog-mobility-at-home"]
+            ["UK qualifications", "/guides/dog-hydrotherapy-qualifications-uk"],
+            ["Elbow dysplasia", "/guides/elbow-dysplasia-hydrotherapy-dogs"],
+            ["Luxating patella", "/guides/luxating-patella-hydrotherapy-dogs"]
           ].map(([label, href]) => (
             <Link key={href} href={href} className="rounded-xl bg-cyan-50 px-4 py-3 text-sm font-black text-ocean ring-1 ring-sky-100">
               {label}
