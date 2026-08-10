@@ -19,25 +19,27 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "HyperDog Therapy | Find Dog Hydrotherapy & Canine Rehab Near You",
+    default: "HyperDog Therapy | UK Dog Hydrotherapy Centres Near You",
     template: "%s | HyperDog Therapy"
   },
-  description: "Find dog hydrotherapy centres, canine physiotherapists, rehabilitation clinics and dog swimming pools near you.",
+  description:
+    "Find UK dog hydrotherapy centres near you — compare pools, underwater treadmills, physiotherapy and rehab listings, then contact providers before you book.",
   alternates: {
     canonical: "/"
   },
   openGraph: {
     type: "website",
     siteName: SITE_BRAND_NAME,
-    title: "HyperDog Therapy | Find Dog Hydrotherapy & Canine Rehab Near You",
-    description: "Find dog hydrotherapy centres, canine physiotherapists, rehabilitation clinics and dog swimming pools near you.",
+    title: "HyperDog Therapy | UK Dog Hydrotherapy Centres Near You",
+    description:
+      "Find UK dog hydrotherapy centres near you — compare pools, underwater treadmills, physiotherapy and rehab listings, then contact providers before you book.",
     url: siteUrl,
     images: [{ url: getDefaultOgImageUrl(), width: 1200, height: 630, alt: "Dog hydrotherapy directory" }]
   },
   twitter: {
     card: "summary_large_image",
-    title: "HyperDog Therapy | Dog Hydrotherapy Directory UK",
-    description: "Find dog hydrotherapy centres, canine physiotherapy and rehab near you.",
+    title: "HyperDog Therapy | UK Dog Hydrotherapy Directory",
+    description: "Find dog hydrotherapy, physiotherapy and rehab centres near you across the UK.",
     images: [getDefaultOgImageUrl()]
   }
 };

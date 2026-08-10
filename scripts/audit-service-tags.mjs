@@ -27,7 +27,14 @@ const centres = centreBlocks.map((block, i) => {
 
 function locationSlug(centre, citySlug) {
   const hay = `${centre.city} ${centre.region}`.toLowerCase();
-  return hay.includes(citySlug.replace(/-/g, " "));
+  const term = citySlug.replace(/-/g, " ");
+  if (hay.includes(term)) return true;
+  const regionSlug = (centre.region || "")
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+  return regionSlug.startsWith(citySlug) && citySlug.length >= 4;
 }
 
 function matchesService(centre, service) {

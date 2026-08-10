@@ -19,9 +19,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params;
   const name = titleCase(slug);
   const count = getCentresByLocation(slug).length;
+  const listingLabel = count === 1 ? "1 listed centre" : `${count} listed centres`;
   return {
-    title: `Dog Hydrotherapy in ${name}`,
-    description: `Find dog hydrotherapy, canine physiotherapy, dog swimming and rehab centres in ${name}, with owner-focused booking guidance and local FAQs.`,
+    title: `Dog Hydrotherapy in ${name} — Local Centres`,
+    description:
+      count > 0
+        ? `Find dog hydrotherapy near ${name}: compare ${listingLabel} for pools, treadmills, physiotherapy and rehab, then check vet referral rules before booking.`
+        : `Find dog hydrotherapy, canine physiotherapy, dog swimming and rehab centres in ${name}, with owner-focused booking guidance and local FAQs.`,
     alternates: {
       canonical: `/locations/${slug}`
     },

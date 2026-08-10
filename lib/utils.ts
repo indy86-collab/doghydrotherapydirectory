@@ -95,7 +95,15 @@ export function getCentresByLocation(locationSlug: string) {
       .map((value) => slugify(value.trim()))
       .filter((value) => value && !broadLocationSlugs.has(value));
 
-    return citySlug === locationSlug || regionSlugs.includes(locationSlug) || centre.postcode.toLowerCase().startsWith(locationTerm);
+    if (citySlug === locationSlug || regionSlugs.includes(locationSlug)) return true;
+    if (centre.postcode.toLowerCase().startsWith(locationTerm)) return true;
+
+    // Hub match: Guildford+Surrey → surrey; Markfield+Leicestershire → leicester; Stockport+Greater Manchester → manchester
+    const hay = `${centre.city} ${centre.region}`.toLowerCase();
+    if (hay.includes(locationTerm)) return true;
+    if (regionSlugs.some((regionSlug) => regionSlug.startsWith(locationSlug) && locationSlug.length >= 4)) return true;
+
+    return false;
   });
 }
 

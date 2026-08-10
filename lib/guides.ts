@@ -29,8 +29,9 @@ const vetDisclaimer =
 export const guides: Guide[] = [
   {
     slug: "what-is-dog-hydrotherapy",
-    title: "Does my dog need hydrotherapy?",
-    description: "Signs hydrotherapy may help, what conditions it is commonly used for, and when to speak to your vet first.",
+    title: "What is dog hydrotherapy? Uses, benefits & when to ask your vet",
+    description:
+      "Dog hydrotherapy explained in plain English: how warm-water sessions work, common uses for arthritis and rehab, and when to speak to your vet first.",
     imageLabel: "Hydrotherapy check",
     imageSrc: "/images/guide-need-hydrotherapy.jpg",
     readTime: "6 min read",
@@ -201,14 +202,15 @@ export const guides: Guide[] = [
   },
   {
     slug: "how-much-does-dog-hydrotherapy-cost",
-    title: "How much does dog hydrotherapy cost in the UK?",
-    description: "Typical UK hydrotherapy session and course prices, what drives fees, insurance paperwork, and questions to ask before you book.",
+    title: "Dog hydrotherapy cost UK: typical prices (£30–£60)",
+    description:
+      "UK dog hydrotherapy usually costs about £30–£60 per session. See assessment fees, what drives prices, insurance cover and questions to ask before you book.",
     imageLabel: "Cost guide",
     imageSrc: "/images/guide-hydrotherapy-cost.jpg",
     readTime: "6 min read",
     category: "Costs",
     keyTakeaways: [
-      "Costs vary by region, facility type, session length and therapist input.",
+      "Follow-up sessions often cost about £30–£60 in the UK; assessments can be higher.",
       "Ask for assessment fees, session fees, package prices and cancellation terms.",
       "Some insurance policies may contribute when treatment is vet-referred."
     ],

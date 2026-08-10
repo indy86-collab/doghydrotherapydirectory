@@ -33,10 +33,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const localServiceRoutes = getValidLocalServicePages().map((page) => `/locations/${page.locationSlug}/${page.serviceSlug}`);
 
   const baseUrl = getSiteUrl();
+  const highPriority = new Set([
+    "",
+    "/centres",
+    "/guides",
+    "/dog-hydrotherapy-near-me",
+    "/guides/how-much-does-dog-hydrotherapy-cost",
+    "/guides/what-is-dog-hydrotherapy",
+    "/guides/how-to-choose-a-canine-hydrotherapy-centre"
+  ]);
+
   return [...staticRoutes, ...guideRoutes, ...centreRoutes, ...locationRoutes, ...localServiceRoutes].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
-    changeFrequency: route === "" ? "weekly" : "monthly",
-    priority: route === "" ? 1 : route === "/centres" || route === "/guides" ? 0.9 : 0.7
+    changeFrequency: route === "" || route === "/centres" ? "weekly" : "monthly",
+    priority: route === "" ? 1 : highPriority.has(route) ? 0.9 : 0.7
   }));
 }

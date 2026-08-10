@@ -1,9 +1,9 @@
 /** ISO dates for Article schema and visible freshness on guides. */
 export const guideDates: Record<string, { datePublished: string; dateModified: string }> = {
-  "what-is-dog-hydrotherapy": { datePublished: "2026-03-01", dateModified: "2026-07-15" },
+  "what-is-dog-hydrotherapy": { datePublished: "2026-03-01", dateModified: "2026-08-10" },
   "dog-hydrotherapy-for-arthritis": { datePublished: "2026-03-01", dateModified: "2026-06-03" },
   "dog-hydrotherapy-after-surgery": { datePublished: "2026-03-01", dateModified: "2026-06-03" },
-  "how-much-does-dog-hydrotherapy-cost": { datePublished: "2026-03-05", dateModified: "2026-07-15" },
+  "how-much-does-dog-hydrotherapy-cost": { datePublished: "2026-03-05", dateModified: "2026-08-10" },
   "underwater-treadmill-for-dogs": { datePublished: "2026-03-05", dateModified: "2026-06-03" },
   "dog-swimming-vs-hydrotherapy": { datePublished: "2026-03-05", dateModified: "2026-06-03" },
   "cruciate-ligament-rehab-dogs": { datePublished: "2026-03-10", dateModified: "2026-06-03" },

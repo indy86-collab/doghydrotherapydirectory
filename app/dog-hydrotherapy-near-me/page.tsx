@@ -23,11 +23,16 @@ const faqs = [
 ];
 
 export const metadata: Metadata = {
-  title: "Dog Hydrotherapy Near Me | Find Centres UK",
+  title: "Dog Hydrotherapy Near Me — Find UK Centres",
   description:
-    "Find dog hydrotherapy near you in the UK: sort by distance, compare pool and treadmill centres, check vet referral rules, then shortlist providers before you book.",
+    "Find dog hydrotherapy near you: sort UK centres by distance, compare pools and underwater treadmills, check vet referral rules, then shortlist before you book.",
   alternates: {
     canonical: "/dog-hydrotherapy-near-me"
+  },
+  openGraph: {
+    title: "Dog Hydrotherapy Near Me — Find UK Centres",
+    description:
+      "Find dog hydrotherapy near you: sort UK centres by distance, compare pools and underwater treadmills, check vet referral rules, then shortlist before you book."
   }
 };
 
@@ -39,9 +44,9 @@ export default function DogHydrotherapyNearMePage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             buildWebPageJsonLd({
-              title: "Dog hydrotherapy near me",
+              title: "Dog Hydrotherapy Near Me — Find UK Centres",
               description:
-                "Find dog hydrotherapy near you in the UK: sort by distance, compare pool and treadmill centres, check vet referral rules, then shortlist providers before you book.",
+                "Find dog hydrotherapy near you: sort UK centres by distance, compare pools and underwater treadmills, check vet referral rules, then shortlist before you book.",
               path: "/dog-hydrotherapy-near-me"
             }),
             buildFaqJsonLd(faqs)

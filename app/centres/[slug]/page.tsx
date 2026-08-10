@@ -8,7 +8,11 @@ import { CentreCard } from "@/components/CentreCard";
 import { CtaBanner } from "@/components/CtaBanner";
 import { GuideCard } from "@/components/GuideCard";
 import { ImagePlaceholder } from "@/components/ImagePlaceholder";
-import { getCentreEditorialEnrichment } from "@/lib/centre-enrichment";
+import {
+  getCentreEditorialEnrichment,
+  getCentreSeoDescription,
+  getCentreSeoTitle
+} from "@/lib/centre-enrichment";
 import { getRecommendedGuidesForCentre } from "@/lib/guide-recommendations";
 import { isDisplaySafeReview } from "@/lib/review-safety";
 import { buildLocalBusinessJsonLd, formatRating, getCentreBySlug, getServiceTags, locationLabel } from "@/lib/utils";
@@ -111,15 +115,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params;
   const centre = getCentreBySlug(slug);
   if (!centre) return {};
+  const title = getCentreSeoTitle(centre);
+  const description = getCentreSeoDescription(centre);
   return {
-    title: `${centre.name} - Dog Therapy Centre in ${centre.city}`,
-    description: `${centre.name} in ${locationLabel(centre)}. View public listing details, services, address, rating, contact options and booking questions to ask before treatment.`,
+    title,
+    description,
     alternates: {
       canonical: `/centres/${centre.slug}`
     },
     openGraph: {
       title: `${centre.name} | HyperDog Therapy`,
-      description: `${centre.name} listing details for dog hydrotherapy, swimming, physiotherapy or rehabilitation research in ${centre.city}.`,
+      description,
       images: centre.image ? [centre.image] : undefined
     }
   };
@@ -218,11 +224,10 @@ export default async function CentreDetailPage({ params }: PageProps) {
             <h2 className="text-2xl font-black text-navy">About this listing</h2>
             <div className="mt-4 space-y-4 text-base leading-8 text-slate-700">
               <p>{enrichment.editorialSummary}</p>
+              <p>{enrichment.facilityFocus}</p>
+              <p>{enrichment.whoItMaySuit}</p>
               <p>
-                {centre.name} is listed as a {centre.category.toLowerCase()} in {locationLabel(centre)}. Based on the listing category and available public business information, this profile may be relevant for owners researching {serviceDescription} services in or around {centre.city}.
-              </p>
-              <p>
-                This page brings together public contact details, location information, service tags and review signals to help owners decide what to ask next. It is not a clinical recommendation, inspection report or confirmation that a centre is suitable for a specific dog.
+                This page brings together public contact details, location information, service tags and review signals to help owners researching {serviceDescription} around {centre.city} decide what to ask next. It is not a clinical recommendation, inspection report or confirmation that a centre is suitable for a specific dog.
               </p>
               <p>
                 If your dog is recovering from injury, living with arthritis, rebuilding after surgery or struggling with mobility, contact your vet before booking. A good centre should be willing to explain referral requirements, assessment steps and how sessions are adapted for your dog&apos;s health and confidence.
@@ -242,6 +247,7 @@ export default async function CentreDetailPage({ params }: PageProps) {
                 </span>
               ))}
             </div>
+            <p className="mt-4 text-sm leading-6 text-slate-700">{enrichment.localSearchNote}</p>
             <p className="mt-4 text-sm leading-6 text-slate-600">
               Confirm current services, therapist availability, prices and suitability directly with the centre before travelling.
             </p>
