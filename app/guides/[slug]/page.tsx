@@ -7,50 +7,13 @@ import { CtaBanner } from "@/components/CtaBanner";
 import { GuideCard } from "@/components/GuideCard";
 import { ImagePlaceholder } from "@/components/ImagePlaceholder";
 import { getGuideDates } from "@/lib/guide-dates";
+import { getOwnerPrepSections } from "@/lib/guide-owner-prep";
 import { getGuide, getGuideCanonicalSlug, guideDisclaimer, guideSlugAliases, guides } from "@/lib/guides";
 import { getSiteUrl, SITE_BRAND_NAME } from "@/lib/site";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
 };
-
-const ownerPrepSections = [
-  {
-    heading: "How to use this guide",
-    body: [
-      "Start with your dog's current problem rather than a treatment name. A dog who is stiff after rest, recovering from surgery, gaining weight because walks are limited, or becoming less confident on slippery floors may need different support even if several options sound similar online. Write down what has changed, when it started, what your vet has already said and what you want your dog to be able to do more comfortably.",
-      "Use the guide to build a shortlist of questions, not to self-diagnose. Hydrotherapy, physiotherapy, swimming and treadmill work can all be useful in the right context, but the safest plan depends on health history, pain levels, wounds, medication, behaviour around water and the provider's assessment. If a centre gives a clear explanation of what they can and cannot help with, that is usually a better sign than vague promises."
-    ]
-  },
-  {
-    heading: "What good providers should explain",
-    body: [
-      "A responsible provider should explain whether veterinary referral or consent is needed, who will assess your dog, what qualifications or professional memberships are relevant, how progress is recorded and how they adapt sessions for nervous, older or post-operative dogs. They should also be comfortable saying when a session should be delayed, shortened or referred back to a vet.",
-      "Ask how water quality is tested, how dogs enter and leave the pool or treadmill, what safety equipment is available and how many dogs are treated at once. If your dog is anxious, reactive, heavy, weak, newly rescued or recovering from surgery, ask how the team handles those situations before you arrive."
-    ]
-  },
-  {
-    heading: "Questions to take to your first call",
-    body: [
-      "Before booking, ask whether the centre offers therapeutic hydrotherapy, fitness swimming, underwater treadmill work, physiotherapy or a combination. Ask how the first appointment is structured, whether they need vet notes, what you should bring, how long a session lasts and what signs would make them stop or change the plan.",
-      "It is also sensible to ask about prices, cancellation terms, insurance paperwork, parking, accessibility and drying facilities. These details are practical, but they matter when you are managing a dog who is sore, tired, nervous or difficult to lift."
-    ],
-    bullets: [
-      "Do you require vet referral or consent?",
-      "Who assesses my dog and records progress?",
-      "Is pool work, treadmill work or physiotherapy most relevant?",
-      "How do you support nervous or older dogs?",
-      "Can you communicate with my vet if needed?"
-    ]
-  },
-  {
-    heading: "Red flags to watch for",
-    body: [
-      "Be cautious if a provider guarantees recovery, dismisses the need for veterinary input, cannot explain their safety process, avoids questions about qualifications or encourages intense exercise for a dog who is painful or recently injured. Therapy should be measured and adaptable, not a one-size-fits-all workout.",
-      "You should also pause if your dog becomes more lame, unusually tired, distressed, painful to touch or reluctant to move after a session. Some tiredness can happen after new activity, but worsening pain or function should be discussed with your vet or therapist promptly."
-    ]
-  }
-];
 
 export function generateStaticParams() {
   return [...guides.map((guide) => guide.slug), ...Object.keys(guideSlugAliases)].map((slug) => ({ slug }));
@@ -85,6 +48,7 @@ export default async function GuideDetailPage({ params }: PageProps) {
   const canonicalSlug = getGuideCanonicalSlug(slug);
   const { datePublished, dateModified } = getGuideDates(canonicalSlug);
   const quickAnswer = guide.keyTakeaways[0] ?? guide.description;
+  const ownerPrepSections = getOwnerPrepSections(guide);
   const relatedGuides = guides
     .filter((item) => item.slug !== guide.slug && item.category === guide.category)
     .concat(guides.filter((item) => item.slug !== guide.slug && item.category !== guide.category))

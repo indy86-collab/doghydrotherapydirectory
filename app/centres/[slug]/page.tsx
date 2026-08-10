@@ -227,10 +227,8 @@ export default async function CentreDetailPage({ params }: PageProps) {
               <p>{enrichment.facilityFocus}</p>
               <p>{enrichment.whoItMaySuit}</p>
               <p>
-                This page brings together public contact details, location information, service tags and review signals to help owners researching {serviceDescription} around {centre.city} decide what to ask next. It is not a clinical recommendation, inspection report or confirmation that a centre is suitable for a specific dog.
-              </p>
-              <p>
-                If your dog is recovering from injury, living with arthritis, rebuilding after surgery or struggling with mobility, contact your vet before booking. A good centre should be willing to explain referral requirements, assessment steps and how sessions are adapted for your dog&apos;s health and confidence.
+                Use the public details on this page to prepare questions about {serviceDescription} in {centre.city}, then confirm
+                suitability with both the centre and your vet. A listing is not a clinical recommendation or inspection report.
               </p>
             </div>
           </article>
@@ -273,9 +271,7 @@ export default async function CentreDetailPage({ params }: PageProps) {
           </article>
           <article className="rounded-2xl border border-sky-100 bg-white p-6 shadow-card">
             <h2 className="text-xl font-black text-navy">Local area</h2>
-            <p className="mt-4 text-sm leading-6 text-slate-700">
-              Owners searching in {centre.city} may also compare nearby providers in {centre.region}. Check travel time, parking, accessibility and whether the centre can accommodate your dog&apos;s size, mobility and confidence level.
-            </p>
+            <p className="mt-4 text-sm leading-6 text-slate-700">{enrichment.localSearchNote}</p>
             <p className="mt-4 text-sm leading-6 text-slate-700">
               Found an outdated phone number, website, address or service tag? Please use the{" "}
               <Link href="/contact" className="font-bold text-ocean underline decoration-ocean/30 underline-offset-2 hover:decoration-ocean">

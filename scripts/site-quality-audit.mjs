@@ -57,14 +57,15 @@ for (const file of sourceFiles) {
 
 const guidesText = read("lib/guides.ts");
 const guidePageText = read("app/guides/[slug]/page.tsx");
+const guideOwnerPrepText = exists("lib/guide-owner-prep.ts") ? read("lib/guide-owner-prep.ts") : "";
 for (const slug of requiredGuideSlugs) {
   if (!guidesText.includes(slug)) {
     issues.push(`Required guide slug is not directly represented or aliased: ${slug}`);
   }
 }
 
-const renderedGuideSupplementWords = (guidePageText.match(/[A-Za-z0-9']+/g) || [])
-  .filter((word) => !["className", "const", "return", "import", "from"].includes(word))
+const renderedGuideSupplementWords = (`${guidePageText}\n${guideOwnerPrepText}`.match(/[A-Za-z0-9']+/g) || [])
+  .filter((word) => !["className", "const", "return", "import", "from", "function", "export"].includes(word))
   .length;
 const guideEntries = [...guidesText.matchAll(/slug: "([^"]+)"[\s\S]*?body: \[([\s\S]*?)\],\n    sections: \[([\s\S]*?)\],\n    faqs: \[([\s\S]*?)\]/g)];
 const thinGuides = guideEntries
